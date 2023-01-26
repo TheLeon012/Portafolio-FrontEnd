@@ -1,0 +1,17 @@
+
+.bg-colorbar{
+    background-color: rgba(5, 5, 5, 0.932);
+} 
+
+/*
+.letra-negra{
+    filter: invert(1);
+        -webkit-filter: invert(1);
+        -moz-filter: invert(1)
+} 
+*/
+.list-group{
+    --bs-list-group-bg:transparent;
+    --bs-list-group-border-color:transparent;
+
+}
