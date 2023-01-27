@@ -4,14 +4,41 @@
 } 
 
 /*
+
+
 .letra-negra{
     filter: invert(1);
         -webkit-filter: invert(1);
         -moz-filter: invert(1)
 } 
 */
+
+/* list group es para poner la lista de redes con fondo transparente*/
 .list-group{
     --bs-list-group-bg:transparent;
     --bs-list-group-border-color:transparent;
 
 }
+ 
+.fa-brands.fa-facebook.fa-2x:hover{
+    --bs-text-opacity: 1;
+    color: blue !important;
+}
+.fa-brands.fa-instagram.fa-2x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(221, 93, 54) !important;
+}
+.fa-brands.fa-github.fa-2x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(0, 255, 76) !important;
+}
+.fa-brands.fa-linkedin.fa-2x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(161, 63, 218) !important;
+}
+
+.fa-sharp.fa-user-lock.fa-2x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(63, 218, 84) !important;
+}
+
