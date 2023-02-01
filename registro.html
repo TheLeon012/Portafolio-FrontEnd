@@ -11,7 +11,6 @@
     <script src="https://kit.fontawesome.com/66d9f495d2.js" crossorigin="anonymous"></script>
 
     <style>
-
         body{
             background-image: linear-gradient(
             rgba(0,0,0,0.7),
@@ -19,18 +18,13 @@
             ), url(/img/banner.jpg) ;
             width: 100%;
             height: 120vh;
-            top: 0;
-            left: 0;
-            right: 0;
             background-repeat: no-repeat;
             background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             -webkit-background-size: cover;
             -msm-background-size: cover;
-            
-            overflow-y: hidden;
-           
+            overflow-y: hidden; 
         }
         .bg{
             background-image: url(/img/Registro1.jpg);
@@ -38,7 +32,7 @@
         }
 
     </style>
-    <title>Inicio de Sesion</title>
+    <title>Registrate</title>
 </head>
 
 <body>
@@ -51,7 +45,8 @@
                     <div class="text-end">
                         <a href="/index.html">
                             <img src="/img/Logo.png" class="hoverArgpr" width="100" alt="">
-                        </a> 
+                        </a>
+                        
                     </div>
                     <h2 class="fw-bold text-center text-white py-5">Bienvenido</h2>
                     <form action="#">
@@ -63,17 +58,15 @@
                             <label for="email" class="form-label">Contraseña</label>
                             <input type="email" class="form-control" name="Contraseña">
                         </div>
-                        <div class="mb-4 form-check text-white">
-                            <input  type="checkbox" name="connected" class="form-check-input>
-                            <label  for="connected" class="form-check-label"> Mantenerme conectado</label>
+                        <div class="mb-4 text-white" >
+                            <label for="email" class="form-label">Confirma contraseña</label>
+                            <input type="email" class="form-control" name="Contraseña">
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
                         </div>
                         <div class="my-3 text-white" >
-                            <small> No tenes cuenta? <a href="/registro.html">Regístrate <br></a></small>
-                           
-                            <span> <a href="#">Restaurar Contraseña</a></span>
+                            <small> Si ya tenés cuenta <a href="/login.html">Ingresar <br></a></small>      
                         </div>
                     </form>
                     <!-- login  con redes sociales-->
@@ -113,30 +106,7 @@
             </div>
         </div> 
     </section>
-    
-
-    <!-- 
-    <div class="modal-body">
-        Hola guapo
-        <form>
-          <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">No compartas tu informacion personal.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Ingresar</button>
-        </form>
-    </div>
-    -->
+     
     <footer class="bg-none text-white text-center fs-7">
         <div class="pt-1">
             <p> &copy Copyright   Fabian Elias Leon - 2022 <br> <br></p>
