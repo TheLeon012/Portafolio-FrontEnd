@@ -6,80 +6,372 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script src="https://kit.fontawesome.com/66d9f495d2.js" crossorigin="anonymous"></script>
 
-    
-    </style>
-    <title>Panel Web - Leon Fabian</title>
-</head>
+    <title>Portafolio Web - Leon Fabian</title>
 
-<body class= "fondo" >
-    <section class="banner border">
-        <nav class="navbar navbar-expand-lg fixed-header"  >
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/img/Logo.png" alt="LogoArgentinaPrograma" class="hover-Argpr" >
+</head>
+<body class= "fondo">
+
+    <nav class="navbar navbar-expand-lg fixed-header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/assets/img/Logo.png" alt="LogoArgentinaPrograma" class="hover-Argpr" >
+            </a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#burgerredes"> 
+              <span class="text-white">  <i class="fa-solid fa-bars"></i>  </span>
+            </button> 
+        </div>
+        <div class="collapse navbar-collapse" id="burgerredes">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Redes">
+                <i class="fa-sharp fa-solid fa-circle-xmark fa-lg"></i>
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Redes">
+                <i class="fa-solid fa-pencil fa-lg"></i>
+            </button>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item">
+                <a href="https://facebook.com" target="_blank"> 
+                  <i class="fa-brands fa-facebook fa-2x text-white"></i>
                 </a>
-                     <ul class="list-group list-group-horizontal  ">
-                        <li class="list-group-item"> 
-                          <!-- button envia al login -->
-                          <a href="/login.html"><i  class="fa-sharp fa-solid fa-user fa-2x text-white"></i></a> 
-                        </li>
-                    </ul>
+              </li>
+              <li class="list-group-item">
+                <a href="https://instagram.com" target="_blank">
+                  <i class="fa-brands fa-instagram fa-2x text-white"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://github.com/TheLeon012" target="_blank">
+                  <i class="fa-brands fa-github fa-2x text-white"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://linkedin.com" target="_blank">
+                  <i class="fa-brands fa-linkedin fa-2x text-white"></i>  
+                </a>
+              </li>
+              <li class="list-group-item"> 
+                <!-- button envia al login -->
+                <a href="/login.html"><i  class="fa-sharp fa-solid fa-user-lock fa-2x text-white"></i></a> 
+              </li>
+            </ul>
+        </div>
+    </nav>
+<!-- foto de perfil y descpricoin -->
+    <section class="banner">
+      <section style="position:relative; top:150px">
+        <div class="container">
+          <div class="row" >
+            <div class="col-xl-4 col-md col-sm-9">   
+              <img src="/assets/img/FotoPerfil.jpeg" alt="Foto Perfil" class="img-fluid imgCircularGrande">
             </div>
-        </nav>
-        <section class="row  border" style="margin-top: 10%; background-color: rgb(116, 115, 115);">
-            <div class="col-1 ">
-                <nav class="vertical bg-white  " id="list-tab" role="tablist" style="padding-top: 10%;">
-                    <ul class="listo-group text-dark text-align: left">
-                        <li class="vertical">
-                            <a class="list-group-item list-group-item-action active" id="list-redes-list" data-bs-toggle="list" 
-                            href="#list-redes" role="tab" aria-controls="list-redes"> 
-                                <i class="fa-solid fa-globe fa-rotate-90"></i>
-                            </a> 
-                        </li>
-                        <li class="listo-group-item vertical"> 
-                            <a class="list-group-item list-group-item-action" id="list-banner-list" data-bs-toggle="list" 
-                            href="#list-banner" role="tab" aria-controls="list-banner"> 
-                                <i class="fa-sharp fa-solid fa-image fa-rotate-90"></i>
-                            </a> 
-                        </li>
-                        <li class="listo-group-item vertical "> 
-                            <a class="list-group-item list-group-item-action" id="list-exp-list" data-bs-toggle="list" 
-                            href="#list-exp" role="tab" aria-controls="list-exp"> 
-                            <i class="fa-solid fa-briefcase fa-rotate-90"></i> 
-                            </a> 
-                        </li> 
-                        <li class="listo-group-item vertical"> 
-                            <a class="list-group-item list-group-item-action" id="list-edu-list" data-bs-toggle="list" 
-                            href="#list-edu" role="tab" aria-controls="list-edu"> 
-                            <i class="fa-sharp fa-solid fa-chalkboard-user fa-rotate-90"></i> 
-                            </a> 
-                        </li> 
-                        <li class="listo-group-item vertical"> 
-                            <a class="list-group-item list-group-item-action" id="list-skills-list" data-bs-toggle="list" 
-                            href="#list-skills" role="tab" aria-controls="list-skills"> 
-                            <i class="fa-solid fa-laptop-code fa-rotate-90"></i>
-                            </a> 
-                        </li>
-                    </ul>   
-                </nav> 
+            <div class="col-xl-8 col-md col-sm-12 margenDescripcion"> 
+              <h4 class="text-center text-white intro">
+                Bienvenidos   
+              </h4>
+              <h2 class="text-center fw-bold intro" style="color: rgb(21, 133, 161);">
+                Soy Fabian Leon
+              </h2>
+              <h3 class="text-center text-white intro">
+                Desarrollador web Full Stack Junior
+              </h3>
+                <div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBanner">
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBanner">
+                        <i class="fa-solid fa-pencil fa-lg"></i>
+                    </button>               
+                </div>
+            </div>   
+          </div>
+        </div>    
+      </section>
+    </section>
+ <!-- Fin foto de perfil y descpricoin --> 
+
+       <!-- acerca de mi y cursos -->
+    <section class="presentacion mt-2">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-xl-5  col-sm-12 mt-2">
+                    <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
+                    Acerca de mi  <br> <br>
+                    <p class="letra-estilo;">
+                    <p class="letra-estilo">
+                    Soy una persona joven de 21 años con un gran interés en la programación, el modelado 3D 
+                    y el desarrollo de videojuegos. 
+                    </p>
+                    </p>
+                    <p class="letra-estilo" >
+                    He trabajado en varios proyectos personales  
+                    relacionados con la creación de estos. Actualmente estoy enfocado en aumentar 
+                     mis conocimientos en estas áreas a través de estudios.
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalAcercademi">
+                            <i class="fa-sharp fa-solid fa-circle-xmark fa-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalAcercademi">
+                            <i class="fa-solid fa-pencil fa-lg"></i>
+                        </button>               
+                    </div>
+                    </h2>
+                </div>
+               <!-- educacion y diplomas-->
+                <div class="col-xl-7 col-md-12 col-sm-12 col-12">
+                    <section style="margin-left: 1%;">
+                        <div class="row">
+                            <h1 class="text-estilo fw-bold " style="text-align:center; margin-top: 7%;">
+                            Cursos
+                            </h1>
+                            <section>
+                                <div class="row">
+                                    <div id="carouselExample" class="carousel slide col-xl-12 col-md-12 col-sm-12  col-12">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                        <h4> Introducción a Python  
+                                            Universidad of Michigan - Coursera  </h4>
+                                        <img src="/assets/img/Coursera EY52P8PN6PUX-page-001.jpg" style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="protecto1">
+                                        </div>
+                                        <div class="carousel-item">
+                                        <h4>#SeProgramar de Argentina Programa</h4>
+                                        <img src="/assets/img/argentina_programa_2022-page-001.jpg" style="border: 2px solid rgb(31, 31, 30);  margin:auto ;" width="365" height="258"  alt="proyecto2">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev hoverArgpr " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden" >Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next hoverArgpr"  type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCursos">
+                                            <i class="fa-sharp fa-solid fa-circle-xmark fa-lg"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCursos">
+                                            <i class="fa-solid fa-pencil fa-lg"></i>
+                                        </button>               
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
             </div>
-            <div class="col-11"  >
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-redes" role="tabpanel" aria-labelledby="list-redes-list">
-                    <div class="container panelmargenes">
-                        <form class="row list-group-horizontal  ">
-                            <div class="col-4 list-group-horizontal  ">
-                                <label for="Linkedin" class="form-label">Linkedin</label>
-                                <input type="text" class="form-control" id="Linkedin">
-                                <div class="my-2">
-                                    <button type="button" class="btn btn-success"> Guardar </button>
-                                    <button type="button" class="btn btn-danger"> Eliminar </button>
-                                </div>     
+        </div>
+    </section>
+       <!-- acerca de mi y curos fin -->
+
+              <!--Habilidades -->
+    <section class="mt-2 text-center">
+      <div style="margin-left:8.4%;">
+        <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
+          Habilidades 
+          <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSkills">
+                <i class="fa-sharp fa-solid fa-circle-xmark fa-lg"></i>
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSkills">
+                <i class="fa-solid fa-pencil fa-lg"></i>
+            </button>               
+        </div>
+        </h2>
+        
+        <div>
+    </section>
+    <section class="text-center">
+        
+      <ul class="list-group">
+        <li class="list-group-item"> 
+          <div>
+            <div class="porcentaje">
+              <div class="containerCard row">
+                  <div class="cardd col-xl-4 col-sm-8 ">
+                      <div class="box">
+                          <div class="porcent">
+                              <svg>
+                                  <circle cx="70" cy="70" r="70"/>
+                                  <circle cx="70" cy="70" r="70"/>
+                              </svg>
+                              <div class="number">
+                                  <h2>65<span>%</span></h2>
+                              </div>
+                              <h3 class="text">Html</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cardd col-xl-4 col-sm-3 col-2">
+                    <div class="box">
+                        <div class="porcent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"/>
+                                <circle cx="70" cy="70" r="70"/>
+                            </svg>
+                            <div class="number">
+                                <h2>70<span>%</span></h2>
                             </div>
-                            <div class="col-4 list-group-horizontal">
+                            <h3 class="text">Css</h3>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="cardd col-xl-4 col-sm-3">
+                    <div class="box">
+                        <div class="porcent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"/>
+                                <circle cx="70" cy="70" r="70"/>
+                            </svg>
+                            <div class="number">
+                                <h2>80<span>%</span></h2>
+                            </div>
+                            <h3 class="text">Bootstrap</h3>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        </li>
+        <li class="list-group-item">
+          <div>
+              <div class="porcentaje">
+                <div class="containerCard row">
+                    <div class="cardd col-xl-4 col-sm-8 col-2">
+                        <div class="box">
+                            <div class="porcent">
+                                <svg>
+                                    <circle cx="70" cy="70" r="70"/>
+                                    <circle cx="70" cy="70" r="70"/>
+                                </svg>
+                                <div class="number">
+                                    <h2>95<span>%</span></h2>
+                                </div>
+                                <h3 class="text">Blender 3D</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardd col-xl-4 col-sm-4 ">
+                      <div class="box">
+                          <div class="porcent">
+                              <svg>
+                                  <circle cx="70" cy="70" r="70"/>
+                                  <circle cx="70" cy="70" r="70"/>
+                              </svg>
+                              <div class="number">
+                                  <h2>75<span>%</span></h2>
+                              </div>
+                              <h3 class="text">Unity 3D</h3>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="cardd col-xl-4 col-sm-4 col-2">
+                      <div class="box">
+                          <div class="porcent">
+                              <svg>
+                                  <circle cx="70" cy="70" r="70"/>
+                                  <circle cx="70" cy="70" r="70"/>
+                              </svg>
+                              <div class="number">
+                                  <h2>85<span>%</span></h2>
+                              </div>
+                              <h3 class="text">Photoshop</h3>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </li>
+      </ul>
+ 
+    </section>
+    <!-- Habilidades fin -->
+
+    <!-- contacto -->
+    <section style="padding-top: 10%;">
+      <div class="container text-center">
+        <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
+          Contacto
+        </h2>
+        <p class="letra-estilo" >
+          Conctáctame para trabajar juntos.
+        </p>
+        <div style="text-align: center;"> 
+          <section>
+            <div class="container px-4 text-center">
+              <div class="row gx-5">
+                <div class="col-xl col-sm-3 col-6">
+                  <div class="p-3">
+                    <a href="https://www.facebook.com/leon.fabian.902/" style="text-align: center;" target="_blank">
+                      <i class="fa-brands fa-facebook fa-3x"></i>
+                    </a>
+                    <h4 style="font-size: 1rem;"> Sigueme </h4>
+                  </div>
+                </div>
+                <div class="col-xl col-sm-3 col-6">
+                  <div class="p-3">
+                    <a href="https://instagram.com" target="_blank">
+                      <i class="fa-brands fa-instagram fa-3x"></i>
+                    </a>
+                    <h4 style="font-size: 1rem;"> Sigueme </h4>
+                  </div>
+                </div>
+                <div class="col-xl col-sm-3 col-6">
+                  <div class="p-3">
+                    <a href="https://github.com/TheLeon012" target="_blank">
+                      <i class="fa-brands fa-github fa-3x"></i>
+                    </a>
+                    <h4 style="font-size: 1rem;">Sigueme</h4>
+                  </div>
+                </div>
+                <div class="col-xl col-sm-3 col-6">
+                  <div class="p-3">
+                    <a href="https://linkedin.com" target="_blank">
+                      <i class="fa-brands fa-linkedin fa-3x"></i>
+                    </a>
+                    <h4 style="font-size: 1rem;">Conctáctame</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- contacto fin -->
+
+    <footer class="bg-white text-black text-center fs-9 " style="margin-top: 10%;">
+      <div class="pt-3">
+        <p> &copy Copyright - 2023 <br>Fabian Elias Leon</p>
+      </div>
+    </footer>
+
+    <!-- VentanasModal Redes-->
+    <div class="modal fade" id="Redes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="redes">Link de Redes</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form class="row list-group-horizontal">
+                        <div class="col-4 list-group-horizontal">
+                            <label for="Linkedin" class="form-label">Linkedin</label>
+                            <input type="text" class="form-control" id="Linkedin">
+                            <div class="my-2">
+                                <button type="button" class="btn btn-success"> Guardar </button>
+                                <button type="button" class="btn btn-danger"> Eliminar </button>
+                            </div>     
+                        </div>
+                        <div class="col-4 list-group-horizontal">
                                 <label for="facebook" class="form-label">Facebook</label>
                                 <input type="text" class="form-control" id="facebook"  >
                                 <div class="my-2">
@@ -87,7 +379,7 @@
                                     <button type="button" class="btn btn-danger"> Eliminar </button>
                                 </div>
                             </div>
-                            <div class="   col-4" >
+                            <div class="col-4" >
                                 <label for="github" class="form-label">Github</label>
                                 <input type="text" class="form-control" id="github"  >
                                 <div class="my-2">
@@ -95,7 +387,7 @@
                                     <button type="button" class="btn btn-danger"> Eliminar </button>
                                 </div>
                             </div>
-                            <div class="   col-4" >
+                            <div class="col-4" >
                                 <label for="github" class="form-label">Instagram</label>
                                 <input type="text" class="form-control" id="github"  >
                                 <div class="my-2">
@@ -103,7 +395,7 @@
                                     <button type="button" class="btn btn-danger"> Eliminar </button>
                                 </div>
                             </div>
-                            <div class="   col-4" >
+                            <div class="col-4" >
                                 <label for="Correo" class="form-label">Correo</label>
                                 <input type="text" class="form-control" id="github"  >
                                 <div class="my-2">
@@ -112,79 +404,264 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
                 </div>
-                <div class="tab-pane fade" id="list-banner" role="tabpanel" aria-labelledby="list-banner-list">
-                    <div class="container panelmargenes">
-                        <form class="row">
-                            <div class="  col-4">
-                                <label for="banner" class="form-label">Banner</label>
-                                <input class="form-control" type="file" id="banner">
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+    <!-- VentanasModal FotoyDescripcion-->
+    <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Banner</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form class="row">
+                        <div class="  col-6">
+                            <label for="banner" class="form-label">Banner</label>
+                            <input class="form-control" type="file" id="banner">
+                            <div class="my-2">
+                                <button type="button" class="btn btn-success"> Guardar </button>
+                                <button type="button" class="btn btn-warning"> Actualizar </button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="banner" class="form-label">Foto de Perfil</label>
+                            <input class="form-control" type="file" id="banner">
+                            <div class="my-2">
+                                <button type="button" class="btn btn-success"> Guardar </button>
+                                <button type="button" class="btn btn-warning"> Actualizar </button>
+                            </div>
+                        </div>   
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="Info" class="form-label">Nombre</label>
+                                <textarea class="form-control" id="Info" style="height: 70px;"></textarea>
                                 <div class="my-2">
-                                    <button type="button" class="btn btn-success"> Guardar </button>
-                                    <button type="button" class="btn btn-warning"> Actualizar </button>
+                                    <button type="button" class="btn btn-success">Guardar</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" class="btn btn-warning">Actualizar </button>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <label for="banner" class="form-label">Foto de Perfil</label>
-                                <input class="form-control" type="file" id="banner">
-                                <div class="my-2">
-                                    <button type="button" class="btn btn-success"> Guardar </button>
-                                    <button type="button" class="btn btn-warning"> Actualizar </button>
-                                </div>
-                            </div>   
-                       
-                            <div class="row">
-                                <div class="col-4">
-                                    <label for="Info" class="form-label">Acerca De Mi</label>
-                                    <textarea class="form-control" id="Info" style="height: 70px;"></textarea>
-                                    <div class="my-2">
-                                        <button type="button" class="btn btn-success">Guardar</button>
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                        <button type="button" class="btn btn-warning">Actualizar </button>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <section>
-                                        <div class="container">
-                                          <div class="row">
-                                              <div class="col-4" >
-                                                  <img src="/img/FotoPerfil.jpeg" width="150" alt="Foto Perfil" class="img-fluid" style="border-radius: 100%;" >
-                                                </div>
-                                            <div class="col-8"> 
-                                              <h5 class="text-center text-white" style="padding-top: 15%;">
-                                                Bienvenidos   
-                                              </h5>
-                                              <h3 class="text-center fw-bold" style="color: rgb(21, 133, 161);">
-                                                Soy Fabian Leon  
-                                              </h3>
-                                              <h4 class="text-center text-white">
-                                                Desarrollador web Full Stack Junior
-                                              </h4>
-                                            </div>
-                                          </div> 
-                                        </div>
-                                      </section>
-                                     
-                                </div>
-                            </div>    
-                        </form>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- VentanasModal acerca de mi-->
+    <div class="modal fade" id="ModalAcercademi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Descripcion</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <label for="Info" class="form-label">Acerca de mi</label>
+                    <textarea class="form-control" id="Info" style="height: 70px;"></textarea>
+                    <div class="my-2">
+                        <button type="button" class="btn btn-success">Guardar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-warning">Actualizar </button>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-exp" role="tabpanel" aria-labelledby="list-exp-list">
-                    Maletin - exp
-                </div>
-                <div class="tab-pane fade" id="list-edu" role="tabpanel" aria-labelledby="list-edu-list">
-                    Educacion
-                </div>
-                <div class="tab-pane fade" id="list-skills" role="tabpanel" aria-labelledby="list-skills-list">
-                    text6
-                </div>
-              </div>
             </div>
-        </section>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
         </div>
-    </section>
+    </div>
+    <!-- VentanasModal sklls-->
+    <div class="modal fade" id="ModalSkills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Habilidades</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row">
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill1" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill1">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success">Guardar</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentajeUno" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentajeUno"> 
+                        </div>
+                    </section>
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill2" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill2">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success"> Guardar </button>
+                                    <button type="button" class="btn btn-danger"> Eliminar </button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentaje2" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentaje2"> 
+                        </div>
+                    </section>
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill3" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill3">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success"> Guardar </button>
+                                    <button type="button" class="btn btn-danger"> Eliminar </button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentaje3" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentaje3">
+                        </div>
+                    </section>
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill4" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill4">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success"> Guardar </button>
+                                    <button type="button" class="btn btn-danger"> Eliminar </button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentaje4" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentaje4"> 
+                        </div>
+                    </section>
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill5" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill5">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success"> Guardar </button>
+                                    <button type="button" class="btn btn-danger"> Eliminar </button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentaje5" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentaje5"> 
+                        </div>
+                    </section>
+                    <section class="row col-12">
+                        <div class="col-6 list-group-horizontal">
+                            <label for="skill6" class="form-label">Habilidad en</label>
+                            <input type="text" class="form-control" id="skill6">
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-success"> Guardar </button>
+                                    <button type="button" class="btn btn-danger"> Eliminar </button>
+                                </div>
+                        </div>
+                        <div class="col-1 list-group-horizontal" style="padding-right: 2rem;">
+                            <label for="porcentaje6" class="form-label">Nivel</label>
+                            <input type="text" class="form-control" id="porcentaje6">
+                        </div>
+                    </section>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- VentanasModal cursos-->
+    <div class="modal fade" id="ModalCursos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Formacion Academica</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body row">
+                <div class="col-6 list-group-horizontal">
+                    <label for="skill1" class="form-label">Titulo de</label>
+                    <input type="text" class="form-control" id="skill1">
+                        <div class="my-2">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+                </div>  
+                <div class="col-6">
+                    <label for="banner" class="form-label">Certificacion</label>
+                    <input class="form-control" type="file" id="banner">              
+                </div> 
+            </div>
+            <div class="modal-body row">
+                <div class="col-6 list-group-horizontal">
+                    <label for="skill1" class="form-label">Titulo de</label>
+                    <input type="text" class="form-control" id="skill1">
+                        <div class="my-2">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+                </div>  
+                <div class="col-6">
+                    <label for="banner" class="form-label">Certificacion</label>
+                    <input class="form-control" type="file" id="banner">              
+                </div> 
+            </div>
+            <div class="modal-body row">
+                <div class="col-6 list-group-horizontal">
+                    <label for="skill1" class="form-label">Titulo de</label>
+                    <input type="text" class="form-control" id="skill1">
+                        <div class="my-2">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+                </div>  
+                <div class="col-6">
+                    <label for="banner" class="form-label">Certificacion</label>
+                    <input class="form-control" type="file" id="banner">              
+                </div> 
+            </div>
+            <div class="modal-body row">
+                <div class="col-6 list-group-horizontal">
+                    <label for="skill1" class="form-label">Titulo de</label>
+                    <input type="text" class="form-control" id="skill1">
+                        <div class="my-2">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+                </div>  
+                <div class="col-6">
+                    <label for="banner" class="form-label">Certificacion</label>
+                    <input class="form-control" type="file" id="banner">              
+                </div> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
+ 
