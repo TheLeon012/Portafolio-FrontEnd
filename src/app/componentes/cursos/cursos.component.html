@@ -1,0 +1,34 @@
+<div>
+    <section style="margin-left: 1%;">
+        <div class="row">
+            <h1 class="text-estilo fw-bold " style="text-align:center; margin-top: 7%;">
+                Cursos
+            </h1>
+            <section >
+
+                <div class="row" >
+                    <div id="carouselExample" class="carousel slide col-xl-12 col-md-12 col-sm-12  col-12">
+                        <div class="carousel-inner  ">
+                            <div class="carousel-item active">
+                                <h4> Introducción a Python Universidad of Michigan - Coursera </h4>
+                                <img src="/assets/img/Coursera EY52P8PN6PUX-page-001.jpg" style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="proyec1">  
+                            </div>
+                            <div class="carousel-item  " *ngFor="let curso of cursosLista">
+                                        <h4> {{curso.nameCurso}} </h4>
+                                        <img [src]="curso.imgCertificado" style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="{{curso.alt}}">  
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev hoverArgpr " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden" >Previous</span>
+                        </button>
+                        <button class="carousel-control-next hoverArgpr"  type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>

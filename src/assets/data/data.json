@@ -1,0 +1,56 @@
+{
+    "name": "Fabian Leon",
+
+    "age": 21,
+    "city": "Metan",
+    "state_or_province": "Salta",
+    "country": "Argentina",
+    "fotoPerfilBanner": "/assets/img/FotoPerfil.jpeg",
+    "bannerTitulo": "Desarrollador web Full Stack Junior",
+
+    "habilidadesJson":
+   [
+
+         {
+            "ColumnaIzquierda":  
+            [  
+               {
+                  "skillname": "Html",
+                  "porcentajeSkill": "85%"
+               }
+   
+            ],
+
+            "ColumnaCentral":  
+            [  
+               {
+                  "skillname": "Css",
+                  "porcentajeSkill": "80%"
+                }
+   
+            ],
+         
+            "ColumnaDerecha":  
+            [  
+               {
+                  "skillname": "Bootstrap",
+                  "porcentajeSkill": "73%"
+               }
+
+            ]
+
+        }
+   ],
+
+   "cursosJson":[{
+         "nameCurso": "Introducción a Python Universidad of Michigan - Coursera",
+         "imgCertificado":"/assets/img/Coursera EY52P8PN6PUX-page-001.jpg",
+         "alt": "curso1"
+      },
+      {
+         "nameCurso": "#SeProgramar de Argentina Programa",
+         "imgCertificado":"/assets/img/argentina_programa_2022-page-001.jpg",
+         "alt": "curso2"
+      }            
+   ]      
+}
