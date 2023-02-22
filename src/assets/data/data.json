@@ -10,40 +10,35 @@
 
     "habilidadesJson":
    [
+            
+      {
+         "skillname": "Html",
+         "porcentajeSkill": "95%",
+         "circleTipo": "4"
+      },
 
-         {
-            "ColumnaIzquierda":  
-            [  
-               {
-                  "skillname": "Html",
-                  "porcentajeSkill": "85%"
-               }
-   
-            ],
+      {
+         "skillname": "Javascript",
+         "porcentajeSkill": "30%",
+         "circleTipo": "1"
+      },
 
-            "ColumnaCentral":  
-            [  
-               {
-                  "skillname": "Css",
-                  "porcentajeSkill": "80%"
-                }
-   
-            ],
+      {
+         "skillname": "Bootstrap",
+         "porcentajeSkill": "70%",
+         "circleTipo": "2"
+      },
+
+      {
+         "skillname": "Unity3D",
+         "porcentajeSkill": "85%",
+         "circleTipo": "3"
+      }
          
-            "ColumnaDerecha":  
-            [  
-               {
-                  "skillname": "Bootstrap",
-                  "porcentajeSkill": "73%"
-               }
-
-            ]
-
-        }
    ],
 
    "cursosJson":[{
-         "nameCurso": "Introducción a Python Universidad of Michigan - Coursera",
+         "nameCurso": "Introducción a Python",
          "imgCertificado":"/assets/img/Coursera EY52P8PN6PUX-page-001.jpg",
          "alt": "curso1"
       },

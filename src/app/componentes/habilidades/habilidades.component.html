@@ -5,61 +5,27 @@
     </h2>
     </div>
 </section>
+<section>
+    <ul class="containerskill">
+        <li *ngFor="let skillss of SkillsLista" [ngClass]="'circleTipo-' + skillss.circleTipo">
+            <div>
+                <div class="ui-widget" >
+                    <div >
 
-<section class="text-center">
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let skill of SkillsLista"> 
- 
-                <div class="porcentaje">
-                    <div class="row containerCard">
-                        <div class="cardd col-xl-4 col-sm-8">
-                            <div class="box ">
-                                <div class="porcent">
-                                    <svg>
-                                        <circle cx="70" cy="70" r="70"/>
-                                        <circle cx="70" cy="70" r="70"/>
-                                    </svg>
-                                    <div class="number">
-                                        <h2>{{skill.ColumnaIzquierda[0].porcentajeSkill}}<span></span></h2>
-                                    </div>
-                                    <h3 class="text">{{skill.ColumnaIzquierda[0].skillname }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardd col-xl-4 col-sm-3 col-2">
-                            <div class="box">
-                                <div class="porcent">
-                                    <svg>
-                                        <circle cx="70" cy="70" r="70"/>
-                                        <circle cx="70" cy="70" r="70"/>
-                                    </svg>
-                                    <div class="number">
-                                        <h2>{{skill.ColumnaCentral[0].porcentajeSkill}}<span></span></h2>
-                                    </div>
-                                    <h3 class="text">{{skill.ColumnaCentral[0].skillname}}</h3>
-                                </div>
-                            </div>
-                        </div>    
-                        
-                        <div class="cardd col-xl-4 col-sm-3">
-                            <div class="box">
-                                <div class="porcent">
-                                    <svg>
-                                        <circle cx="70" cy="70" r="70"/>
-                                        <circle cx="70" cy="70" r="70"/>
-                                    </svg>
-                                    <div class="number">
-                                        <h2>{{skill.ColumnaDerecha[0].porcentajeSkill}}<span></span></h2>
-                                    </div>
-                                    <h3 class="text">{{skill.ColumnaDerecha[0].skillname}}</h3>
-                                </div>
-                            </div>
-                        </div>   
+                        <div class="ui-value">{{skillss.porcentajeSkill}} </div>
+                        <span class="ui-label">{{skillss.skillname}}</span>
+
                     </div>
+                     
                 </div>
-            
+                 
+            </div>
         </li>
+        
     </ul>
+  
 
-     
 </section>
+ 
+
+  
