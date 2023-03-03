@@ -11,6 +11,14 @@ import { BannerComponent } from './componentes/banner/banner.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './componentes/login/login.component';
+
+const appRoutes: Routes=[
+  {path:'', component:HomeComponent},
+  {path:'login', component: LoginComponent}
+];
 
 @NgModule({
   declarations: [
@@ -22,11 +30,14 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     ContactoComponent,
     BannerComponent,
     ExperienciaComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

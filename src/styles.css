@@ -299,15 +299,7 @@ nav.img{
      text-align: center;
 }
 
- 
-p.letra-estilo{
-    line-height: 2;
-    font-size: 1.1rem;
-    text-align: left;
-    font-weight: 350;
-    color: rgb(53, 52, 52);
 
-}
 
 nav.fixed-header{
     position: fixed;

@@ -10,26 +10,32 @@
     </div>
     <div class="collapse navbar-collapse" id="burgerredes">
       <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">
-          <a href="https://facebook.com" target="_blank"> 
-            <i class="fa-brands fa-facebook fa-2x text-white"></i>
-          </a>
+        <li (click)="toacerde()" class="list-group-item">
+          <h4 class="fa-1x">Descripcion</h4>
+ 
+          
         </li>
-        <li class="list-group-item">
-          <a href="https://instagram.com" target="_blank">
-            <i class="fa-brands fa-instagram fa-2x text-white"></i>
-          </a>
+        <li (click)="toexp()" class="list-group-item">
+          
+          <h4 class="fa-1x">Experiencia</h4>
+          
         </li>
-        <li class="list-group-item">
-          <a href="https://github.com/TheLeon012" target="_blank">
-            <i class="fa-brands fa-github fa-2x text-white"></i>
-          </a>
+        <li  (click)="toedu()" class="list-group-item">
+          
+          <h4 class="fa-1x">Educacion</h4>
+           
         </li>
-        <li class="list-group-item">
-          <a href="https://linkedin.com" target="_blank">
-            <i class="fa-brands fa-linkedin fa-2x text-white"></i>  
-          </a>
+        <li (click)="toskill()" class="list-group-item">
+          
+          <h4 class="fa-1x">Habilidades</h4>
+        
         </li>
+
+        <li (click)="tocontact()" class="list-group-item">
+          
+          <h4 class="fa-1x">Contacto</h4>
+      
+      </li>
         <li class="list-group-item"> 
           <!-- button envia al login -->
           <a href="/login.html"><i  class="fa-sharp fa-solid fa-user-lock fa-2x text-white"></i></a> 

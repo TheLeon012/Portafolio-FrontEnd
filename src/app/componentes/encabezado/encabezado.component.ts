@@ -13,5 +13,28 @@ export class EncabezadoComponent    {
 
   }
    
+  toacerde(){
+    document.getElementById("acercade")?.scrollIntoView();
+
+  }
+  toexp(){
+    document.getElementById("exp")?.scrollIntoView();
+
+  }
+  toskill(){
+    document.getElementById("skill")?.scrollIntoView();
+
+  }
+  toedu(){
+    document.getElementById("edu")?.scrollIntoView();
+
+  }
+  tocontact(){
+    document.getElementById("contact")?.scrollIntoView();
+
+  }
+ 
+
+
 
 }
