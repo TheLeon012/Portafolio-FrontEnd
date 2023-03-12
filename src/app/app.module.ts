@@ -14,6 +14,7 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { HomeComponent } from './componentes/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './componentes/login/login.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes=[
     ExperienciaComponent,
     ProyectosComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

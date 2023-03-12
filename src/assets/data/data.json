@@ -47,5 +47,31 @@
          "imgCertificado":"/assets/img/argentina_programa_2022-page-001.jpg",
          "alt": "curso2"
       }            
-   ]      
+   ],
+
+   "proyectosJson":[{
+      "nameProyecto": "Mi primer Portafolio",
+      "imgproyect":"/assets/img/Coursera EY52P8PN6PUX-page-001.jpg",
+      "fecha": "25/10/2023",
+      "descripcion": "Este fue mi primer proyecto, mi propio portafolio web.",
+      "autor": "Fabian Leon"
+   }, 
+   {
+      "nameProyecto": "Mi primer Portafolio",
+      "imgproyect":"/assets/img/Coursera EY52P8PN6PUX-page-001.jpg",
+      "fecha": "25/10/2023",
+      "descripcion": "Este fue mi primer proyecto, mi propio portafolio web.",
+      "autor": "Fabian Leon"
+   }, 
+   {
+      "nameProyecto": "Mi primer Portafolio",
+      "imgproyect":"/assets/img/Coursera EY52P8PN6PUX-page-001.jpg",
+      "fecha": "25/10/2023",
+      "descripcion": "Este fue mi primer proyecto, mi propio portafolio web.",
+      "autor": "Fabian Leon"
+   } 
+
+
+   ]
+   
 }

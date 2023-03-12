@@ -5,27 +5,23 @@
     </h2>
     </div>
 </section>
-<section>
-    <ul class="containerskill">
-        <li *ngFor="let skillss of SkillsLista" [ngClass]="'circleTipo-' + skillss.circleTipo">
+<section class="containerskill">
+    <div class="row">
+        <div class="containerskill" *ngFor="let skillss of SkillsLista" [ngClass]="'circleTipo-' + skillss.circleTipo">
             <div>
                 <div class="ui-widget" >
                     <div >
-
                         <div class="ui-value">{{skillss.porcentajeSkill}} </div>
                         <span class="ui-label">{{skillss.skillname}}</span>
-
                     </div>
-                     
                 </div>
-                 
             </div>
-        </li>
-        
-    </ul>
-  
+        </div>
+         
+    </div>
 
 </section>
+
  
 
   

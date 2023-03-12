@@ -5,26 +5,27 @@
     </h2>
     </div>
 </section>
-<div class="row">
-    
-    <div class="example-2 card">
-      <div class="wrapper">
-        <div class="header">
-          <div class="date">
-            <span class="day">25</span>
-            <span class="month">feb</span>
-            <span class="year">2023</span>
+<section class="sectionproyect">
+    <div class="row"> 
+      <div *ngFor="let proyec of ProyecLista" class="example-2 card col-2">
+        <div class="wrapper border" >
+          <div class="header">
+            <div class="date" >
+              <span>{{proyec.fecha}}</span>
+            </div>
           </div>
-          
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Fabian Leon</span>
-            <h1 class="title"><a href="#">Portafolio web</a></h1>
-            <p class="text">Este fue mi primer proyecto, mi propio portafolio web.</p>
-            <a href="#" class="button">Ver mas</a>
+          <div class="data">
+            <div class="content">
+              <span class="author"> {{proyec.autor}} </span>
+              <h1 class="title"><a href="#"> {{proyec.nameProyecto}}</a></h1>
+              <p class="text"> {{proyec.descripcion}}</p>
+              <a href="#" class="button">Ver mas</a>
+            </div>
           </div>
         </div>
-      </div>
+      </div> 
+  
     </div>
-</div>
+
+</section>
+
