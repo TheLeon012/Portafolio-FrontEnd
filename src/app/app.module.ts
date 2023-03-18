@@ -15,6 +15,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './componentes/login/login.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
@@ -39,6 +40,7 @@ const appRoutes: Routes=[
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
