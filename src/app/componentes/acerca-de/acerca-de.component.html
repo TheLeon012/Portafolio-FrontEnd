@@ -1,24 +1,117 @@
 <section class="presentacion mt-2">
-    <div class="container text-center">
+    <div class="container text-center desvanecer">
         <div class="row">
             <div class="col-xl-5  col-sm-12 mt-2">
                 <h2 class="acercademi fw-bold mt-5">
-                Acerca de mi  <br> 
-                
+                Acerca de mi  
+                    <button 
+                        (click)="onUpdateAcercade"
+                        type="button" class="btn btn-primary botonEditor" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#editAcercadeModal"
+                        data-original-title="edit">
+                            <i class="fa fa-pencil"></i>
+                    </button>
                     <p class="letra-estilo">
-                    Soy una persona joven de 21 años con un gran interés en la programación, el modelado 3D 
-                    y el desarrollo de videojuegos. 
-                    
-                </p>
-                <p class="letra-estilo" >
-                    He trabajado en varios proyectos personales  
-                    relacionados con la creación de estos. Actualmente estoy enfocado en aumentar 
-                    mis conocimientos en estas áreas a través de estudios.
-                </p>
+                        {{usuario?.descripcion}} </p>
                 </h2>
             </div>
-<!--             
-            <app-cursos class="col-xl-7 col-md-12 col-sm-12 col-12"></app-cursos> -->
+        </div>
+    </div>
+    <!-- edit modal -->
+    <div class="modal fade" 
+        id="editAcercadeModal" 
+        tabindex="-1"  
+        role="dialog" 
+        aria-labelledby="editAcercadeModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAcercadeModalLabel"> 
+                        Editar </h5>
+                </div>
+                <div class="modal-body">
+                    <form #editForm="ngForm">
+                        <div class="form-group">
+                            <label for="descripcion"> Descripcion  </label>
+                            <input 
+                                type="text" 
+                                ngModel =  "{{usuario?.descripcion}}"
+                                name="descripcion" 
+                                class="form-control" 
+                                id="descripcion" 
+                                aria-describedby="emailHelp"
+                                placeholder="Descripcion"    
+                            />
+                        </div>
+                        <!-- estos input mantienen los use para no modificar las demas variables -->
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.id}}" 
+                            name="id" 
+                            id="id"
+                            class="form-control"
+                            placeholder="" 
+                        />
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.nombre}}" 
+                            name="nombre" 
+                            id="nombre"
+                            class="form-control"
+                        placeholder="" 
+                        />
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.titulo}}" 
+                            name="titulo" 
+                            id="titulo"
+                            class="form-control"
+                        placeholder="" 
+                        />
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.apellido}}" 
+                            name="apellido" 
+                            id="apellido"
+                            class="form-control"
+                        placeholder="" 
+                        />
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.fotoPerfil}}" 
+                            name="fotoPerfil" 
+                            id="fotoPerfil"
+                            class="form-control"
+                        placeholder="" 
+                        />
+                        <input 
+                            type="hidden" 
+                            ngModel= "{{usuario?.fotoBanner}}" 
+                            name="fotoBanner" 
+                            id="fotoBanner"
+                            class="form-control"
+                        placeholder="" 
+                        />
+                        <div class="modal-footer">
+                            <button 
+                                type="button" 
+                                id=""
+                                class="btn btn-secondary" 
+                                data-bs-dismiss="modal">
+                                Cerrar
+                            </button>
+                            <button 
+                                (click)="onUpdateAcercade(editForm.value)"
+                                data-bs-dismiss="modal"  
+                                class="btn btn-primary"> 
+                                    Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>

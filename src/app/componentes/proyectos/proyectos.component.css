@@ -1,6 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
   
+.desvanecer {
+
+    padding: 20px;
+    scroll-margin: 200px ; /* establece el margen */
+    opacity: 1; /* oculta el contenido */
+    transform: translateY(400px); /* desplaza hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+    scroll-snap-align: start; /* nueva propiedad */
+     
+  }
+  
+ .desvanecer.inView {
+	padding-top: 6%;
+    opacity: 1; /* muestra el contenido */
+    transform: translateY(0); /* elimina el desplazamiento */
+ }
  
+.botonEditor{
+	
+	position: absolute;
+    right: 0;
+	top: 0;
+ 
+} 
 a {
 	 text-decoration: none;
 }
@@ -83,9 +106,6 @@ a {
 	 transform: translateY(-60px);
 }
 
- .example-2 .wrapper {
-	 background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
-}
  .example-2 .wrapper:hover .menu-content span {
 	 transform: translate(-50%, -10px);
 	 opacity: 1;

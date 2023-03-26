@@ -1,0 +1,20 @@
+ .botonEditor{
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+ }
+ .desvanecer {
+ 
+   padding: 20px;
+   scroll-margin: 200px ; /* establece el margen */
+   opacity: 1; /* oculta el contenido */
+   transform: translateY(400px); /* desplaza hacia abajo */
+   transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+   scroll-snap-align: start; /* nueva propiedad */
+    
+ }
+ 
+.desvanecer.inView {
+   opacity: 1; /* muestra el contenido */
+   transform: translateY(0); /* elimina el desplazamiento */
+}

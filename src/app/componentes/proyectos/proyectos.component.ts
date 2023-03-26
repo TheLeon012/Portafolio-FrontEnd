@@ -1,5 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PortafolioService } from 'src/app/servicios/portafolio.service';
+import { NgForm } from '@angular/forms';
+import { Proyectos } from 'src/app/models/proyectos';
+import { ProyectosService } from 'src/app/servicios/proyectos.service';
+ 
 
 
 @Component({
@@ -9,13 +13,108 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class ProyectosComponent implements OnInit {
 
-  ProyecLista: any;
-  constructor(private datosPorfolio:PortafolioService){}
+  
+  public proy:Proyectos[]=[];
+  public editProyectos:Proyectos | undefined;
+  public deleteProyecto:Proyectos | undefined;
+ 
+  constructor(private proyectosService:ProyectosService){}
 
   ngOnInit(): void{
-    this.datosPorfolio.obtenerDatos().subscribe(data=>{
-      this.ProyecLista=data.proyectosJson;
+
+    this.getProy();
+    "use strict";
+    let boxes = Array.from(document.querySelectorAll(".desvanecer"));
+    
+    let scroller = () => {
+      boxes.forEach(desvanecer => {
+        if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
+          desvanecer.classList.add("inView");
+        } else {
+          desvanecer.classList.remove("inView");
+        }
+      });
+    };
+    
+    window.addEventListener("load", scroller, false);
+    window.addEventListener("scroll", scroller, false);
+
+     
+  }
+
+  public getProy():void{
+    this.proyectosService.getProy().subscribe({
+      next:(Response: Proyectos[]) =>{
+        this.proy=Response;
+      },
+      error:(error: HttpErrorResponse) =>{
+        alert(error.message);
+      }
+    })
+  }
+  
+  public onOpenModal(mode:String, proyecto?:Proyectos):void{
+    const container=document.getElementById('main-container');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal');
+    if(mode==='add'){
+      button.setAttribute('data-target', '#addProyModal');
+    }else if(mode==='delete'){
+      this.deleteProyecto=proyecto;
+      button.setAttribute('data-target', '#deleteProyModal');
+    }else if(mode==='edit'){
+      this.editProyectos=proyecto;
+      button.setAttribute('data-target', '#editProyModal');
+    }
+
+    container?.appendChild(button);
+    button.click();
+  }
+ 
+
+  public onAddProyecto(addForm : NgForm): void{
+    document.getElementById('add-proyecto-form')?.click();
+    this.proyectosService.addExp(addForm.value).subscribe({
+      next: (response:Proyectos) =>{
+        console.log(response);
+        this.getProy();
+        addForm.reset();
+      },
+      error:(error: HttpErrorResponse) =>{
+        alert(error.message);
+        addForm.reset();
+      }
     })
   }
 
+  public onUpdateProyecto(proyectos : Proyectos){
+    this.editProyectos=proyectos;
+    document.getElementById('add-proyecto-form')?.click();
+    this.proyectosService.updateExp(proyectos).subscribe({
+      next: (response:Proyectos) =>{
+        console.log(response);
+        this.getProy();
+  
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+ 
+      }
+    })
+  }
+
+  public onDeleteExperiencias(idProy:number):void{
+
+    this.proyectosService.deleteExp(idProy).subscribe({
+      next: (response:void) =>{
+        console.log(response);
+        this.getProy();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
+  }    
 }
+

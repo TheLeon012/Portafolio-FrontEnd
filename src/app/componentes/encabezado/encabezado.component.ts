@@ -33,6 +33,10 @@ export class EncabezadoComponent    {
     document.getElementById("contact")?.scrollIntoView();
 
   }
+
+  toproyect(){
+    document.getElementById("proyectos")?.scrollIntoView();
+  }
  
 
 

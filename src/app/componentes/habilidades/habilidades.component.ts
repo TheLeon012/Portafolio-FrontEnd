@@ -1,6 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PortafolioService } from 'src/app/servicios/portafolio.service';
-
+import { NgForm } from '@angular/forms';
+import { Habilidades } from 'src/app/models/habilidades';
+import { HabilidadesService } from 'src/app/servicios/habilidades.service';
+ 
 @Component({
   selector: 'app-habilidades',
   templateUrl: './habilidades.component.html',
@@ -8,13 +11,106 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class HabilidadesComponent implements OnInit{
 
-  SkillsLista: any;
-  constructor(private datosPorfolio:PortafolioService){}
+  public habilidades:Habilidades[]=[];
+  public edithabilidades:Habilidades | undefined;
+  public deleteSki:Habilidades | undefined;
+ 
+  constructor(private habilidadesService:HabilidadesService){}
 
   ngOnInit(): void{
-    this.datosPorfolio.obtenerDatos().subscribe(data=>{
-      this.SkillsLista=data.habilidadesJson;
+
+    this.getSkill();
+    "use strict";
+    let boxes = Array.from(document.querySelectorAll(".desvanecer"));
+    
+    let scroller = () => {
+      boxes.forEach(desvanecer => {
+        if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
+          desvanecer.classList.add("inView");
+        } else {
+          desvanecer.classList.remove("inView");
+        }
+      });
+    };
+    
+    window.addEventListener("load", scroller, false);
+    window.addEventListener("scroll", scroller, false);
+
+     
+  }
+
+  public getSkill():void{
+    this.habilidadesService.getSkill().subscribe({
+      next:(Response: Habilidades[]) =>{
+        this.habilidades=Response;
+      },
+      error:(error: HttpErrorResponse) =>{
+        alert(error.message);
+      }
+    })
+  }
+  
+  public onOpenModal(mode:String, habilidades?:Habilidades):void{
+    const container=document.getElementById('main-container');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal');
+    if(mode==='add'){
+      button.setAttribute('data-target', '#addSkillModal');
+    }else if(mode==='delete'){
+      this.deleteSki=habilidades;
+      button.setAttribute('data-target', '#deleteSkillModal');
+    }else if(mode==='edit'){
+      this.edithabilidades=habilidades;
+      button.setAttribute('data-target', '#editSkillModal');
+    }
+
+    container?.appendChild(button);
+    button.click();
+  }
+ 
+
+  public onAddHabilidades(addForm : NgForm): void{
+    document.getElementById('add-habilidades-form')?.click();
+    this.habilidadesService.addSkill(addForm.value).subscribe({
+      next: (response:Habilidades) =>{
+        console.log(response);
+        this.getSkill();
+        addForm.reset();
+      },
+      error:(error: HttpErrorResponse) =>{
+        alert(error.message);
+        addForm.reset();
+      }
     })
   }
 
+  public onUpdateHabilidades(habilidades : Habilidades){
+    this.edithabilidades=habilidades;
+    document.getElementById('add-habilidades-form')?.click();
+    this.habilidadesService.updateSkill(habilidades).subscribe({
+      next: (response:Habilidades) =>{
+        console.log(response);
+        this.getSkill();
+  
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+ 
+      }
+    })
+  }
+
+  public onDeleteHabilidades(idSkill : number):void{
+
+    this.habilidadesService.deleteSkill(idSkill).subscribe({
+      next: (response:void) =>{
+        console.log(response);
+        this.getSkill();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
+  }    
 }

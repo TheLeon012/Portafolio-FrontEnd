@@ -1,0 +1,25 @@
+img{
+    border: 2px solid rgb(35, 36, 34); 
+    z-index: -1; 
+    margin:auto;
+    width: 362px;
+    height: 271px ;
+    object-fit: scale-down;
+    object-position: center;
+}
+
+.desvanecer {
+ 
+    padding: 20px;
+    scroll-margin: 200px ; /* establece el margen */
+    opacity: 1; /* oculta el contenido */
+    transform: translateY(400px); /* desplaza hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+    scroll-snap-align: start; /* nueva propiedad */
+     
+  }
+  
+ .desvanecer.inView {
+    opacity: 1; /* muestra el contenido */
+    transform: translateY(0); /* elimina el desplazamiento */
+ }

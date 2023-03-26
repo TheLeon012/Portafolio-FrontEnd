@@ -1,54 +1,261 @@
-<section class="mt-2 text-center">
-    <div style="margin-left:8.4%; padding-top: 6%;">
-    <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
-      Educacion 
-    </h2>
-    </div>
-</section>
-<div>
-    <section style="margin: 2% 8.4%;">
-        <div class="row">
-            <div class="col-xl-6">
-                <h3 class="text-estilo fw-bold " style="text-align:center; ">
-                    Cursos
-                </h3>
-                <section style="text-align:center">
-                    <div class="row" >
-                        <div id="carouselExample" class="carousel slide col-xl-12 col-md-12 col-sm-12  col-12">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <h4> a </h4>
-                                    <img src="/assets/img/Coursera EY52P8PN6PUX-page-001.jpg" style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="proyec1">  
-                                </div>
-                                <div class="carousel-item text-align:center" *ngFor="let curso of cursosLista">
-                                            <h4> {{curso.nameCurso}} </h4>
-                                            <img [src]="curso.imgCertificado" style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="{{curso.alt}}">  
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev hoverArgpr " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden" >Previous</span>
-                            </button>
-                            <button class="carousel-control-next hoverArgpr"  type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col-xl-6">
-                <h3 class="text-estilo fw-bold " style="text-align:center">
-                    Educacion Formal
-                </h3>
-                <ul>
-                    <li>
-                        <h4>Tecnico en equipos e instalaciones electromecanicas</h4>
-                        <p>Escuela de Educacion Tecnica N3133 Prof. Rosmiro Bazan</p> <p>2013 - 2019</p>
-                    </li>
-                </ul>
-            </div>
+<section class="desvanecer">
+    <section class="mt-2 text-center">
+        <div style="margin-left:8.4%; padding-top: 6%;">
+        <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
+          Educacion 
+        </h2>
         </div>
     </section>
+    <div>
+        <section style="margin: 2% 8.4%;">
+            <div class="row">
+                <div class="col-xl-6">
+    
+                    <app-estudios></app-estudios>
+    
+                </div>
+    
+                <div class="col-xl-6" >
+                    <h3 class="text-estilo fw-bold " style="text-align:center">
+                        Educacion Formal
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEstudioModal">
+                            añadir estudios
+                        </button>
+                    </h3>
+                    <ul *ngFor="let educacions of educacion">
+                        <li>
+                            <h4>{{educacions.tituloEdu}} </h4>
+                            <p>{{educacions.institucionEdu}}</p> <p>{{educacions.fechaInicio}} - {{educacions.fechaFin}} </p>
+                            <div>
+                                <button 
+                                    (click)="onOpenModal('edit', educacions)"
+                                    type="button" class="btn btn-primary" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#editEstudioModal"
+                                    data-original-title="edit">
+                                        <i class="fa fa-pencil"></i>
+                                </button>
+            
+                                <button 
+                                    (click)="onOpenModal('delete', educacions)"
+                                    type="button" 
+                                    class="btn btn-danger" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#deleteEducacionModal"
+                                    data-original-title="delete"> 
+                
+                                        <i class="fas fa-times"></i>
+                                </button>                  
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<!-- add modal -->
+<div class="modal fade" 
+        id="addEstudioModal" 
+        tabindex="-1"  
+        role="dialog" 
+        aria-labelledby="addEstudioModalLabel" 
+        aria-hidden="true">
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="addEstudioModalLabel"> Añadir estudios</h5>  
+        </div>
+        <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddEducacion(addForm)">
+                <div class="form-group">
+                    <label for="tituloEdu"> Titulo </label>
+                    <input type="text" 
+                            ngModel 
+                            name="tituloEdu" 
+                            class="form-control" 
+                            id="tituloEdu" 
+                            placeholder=" " 
+                            required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="institucionEdu"> Institucion </label>
+                    <input type="text" 
+                    ngModel 
+                    name="institucionEdu" 
+                    class="form-control" 
+                    id="institucionEdu" 
+                    placeholder=" " 
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaInicio"> Fecha de inicio </label>
+                    <input type="text" 
+                    ngModel 
+                    name="fechaInicio" 
+                    class="form-control" 
+                    id="fechaInicio" 
+                    placeholder=" " 
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin"> Fecha de fin </label>
+                    <input type="text" 
+                    ngModel 
+                    name="fechaFin" 
+                    class="form-control" 
+                    id="fechaFin" 
+                    placeholder=" " 
+                    required>
+                </div>
+                <div class="modal-footer">
+                    <button 
+                    type="button" 
+                    id="add-edu-form"
+                    class="btn btn-secondary" 
+                    data-bs-dismiss="modal">
+                    Cerrar
+                    </button>
+                    <button 
+                        [disabled]="addForm.invalid"
+                        type="submit" 
+                        class="btn btn-primary" > 
+                            Guardar
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+    <!-- edit modal -->
+<div class="modal fade" 
+    id="editEstudioModal" 
+    tabindex="-1"  
+    role="dialog" 
+    aria-labelledby="editEstudioModalLabel" 
+    aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editEstudioModalLabel"> 
+                    Editar estudio en {{editEdu?.tituloEdu}} </h5>
+            </div>
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <div class="form-group">
+                        <label for="tituloEdu"> Titulo </label>
+                        <input 
+                            type="text" 
+                            ngModel =  "{{editEdu?.tituloEdu}}"
+                            name="tituloEdu" 
+                            class="form-control" 
+                            id="tituloEdu" 
+                            aria-describedby="emailHelp"
+                            placeholder=" " 
+                                
+                        />
+                    </div>
+                    <input 
+                        type="hidden" 
+                        ngModel= "{{editEdu?.idEduc}}" 
+                        name="idEduc" 
+                        id="idEduc"
+                        class="form-control"
+                        placeholder=" " />
+                    
+                    <div class="form-group">
+                        <label for="institucionEdu">Institucion</label>
+                        <input type="text" 
+                        ngModel = "{{editEdu?.institucionEdu}}"
+                        name="institucionEdu" 
+                        class="form-control" 
+                        id="institucionEdu" 
+                        placeholder=" " >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaInicio"> Fecha de inicio</label>
+                        <input type="text" 
+                        ngModel = "{{editEdu?.fechaInicio}}"
+                        name="fechaInicio" 
+                        class="form-control" 
+                        id="fechaInicio" 
+                        placeholder=" " >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaFin">Fecha de fin</label>
+                        <input type="text" 
+                        ngModel = "{{editEdu?.fechaFin}}"
+                        name="fechaFin" 
+                        class="form-control" 
+                        id="fechaFin" 
+                        placeholder=" " >
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button 
+                            type="button" 
+                            id=""
+                            class="btn btn-secondary" 
+                            data-bs-dismiss="modal">
+                            Cerrar
+                        </button>
+                        <button 
+                            (click)="onUpdateEducacion(editForm.value)"
+                            data-bs-dismiss="modal"  
+                            class="btn btn-primary"> 
+                                Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete modal -->
+<div
+        class="modal fade" 
+        id="deleteEducacionModal" 
+        tabindex="-1"  
+        role="dialog" 
+        aria-labelledby="deleteEducacionModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteEducacionModalLabel"> Eliminar estudio </h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        ¿Estás seguro de que quieres eliminar estudio de {{deleteEdu?.tituloEdu}}?
+                    </p>
+                    <div class="modal-footer">
+                        <button 
+                                type="button" 
+                                class="btn btn-secondary" 
+                                data-bs-dismiss="modal">
+                                Cerrar
+                        </button>
+                        <button 
+                            (click)="onDeleteEstudio(deleteEdu!.idEduc)"
+                            
+                            data-bs-dismiss="modal" 
+                            class="btn btn-danger" 
+                            type="button" > 
+                                Eliminar
+                            
+                        </button>
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
 </div>

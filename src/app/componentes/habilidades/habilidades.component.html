@@ -1,26 +1,253 @@
-<section class="mt-2 text-center">
-    <div style="margin-left:8.4%; padding-top: 6%;">
-    <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
-      Habilidades 
-    </h2>
-    </div>
-</section>
-<section class="containerskill">
-    <div class="row">
-        <div class="containerskill" *ngFor="let skillss of SkillsLista" [ngClass]="'circleTipo-' + skillss.circleTipo">
-            <div>
-                <div class="ui-widget" >
-                    <div >
-                        <div class="ui-value">{{skillss.porcentajeSkill}} </div>
-                        <span class="ui-label">{{skillss.skillname}}</span>
+<section class="desvanecer">
+    <section class="mt-2 text-center">
+        <div style="margin-left:8.4%; padding-top: 6%; padding-bottom: 2%;">
+            <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
+            Habilidades  
+             
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHabilidadesModal">
+                añadir habilidad
+            </button>
+            </h2>
+        </div>
+        
+    </section>
+    
+    <section class="containerskill">
+        <div class="row">
+            <div class="containerskill" *ngFor="let skill of habilidades" [ngClass]="'circleTipo-' + skill.tipoCircleSkill">
+                <div>
+                    <div class="ui-widget" >
+                        <div> 
+                            <div class="ui-value">{{skill.porcentajeSkill}}%</div> 
+                            <span class="ui-label">{{skill.tituloSkill}} </span>
+                        </div>
+                    </div>
+                    <div>
+                        <button 
+                            (click)="onOpenModal('edit', skill)"
+                            type="button" class="btn btn-primary botonEditor" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#editHabilidadesModal"
+                            data-original-title="edit">
+                                <i class="fa fa-pencil"></i>
+                        </button>
+    
+                        <button 
+                            (click)="onOpenModal('delete', skill)"
+                            type="button" 
+                            class="btn btn-danger botonEditor" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#deleteSkillModal"
+                            data-original-title="delete"> 
+                        
+                                <i class="fas fa-times"></i>
+                        </button>                 
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
-         
-    </div>
+    
+    
+        
+    </section>
 
 </section>
+
+<!-- add modal -->
+<div class="modal fade" 
+id="addHabilidadesModal" 
+tabindex="-1"  
+role="dialog" 
+aria-labelledby="addHabilidadesModalLabel" 
+aria-hidden="true">
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="addHabilidadesModalLabel"> Añadir Habilidad</h5>  
+        </div>
+        <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddHabilidades(addForm)">
+                <div class="form-group">
+                    <label for="tituloSkill"> Habilidad </label>
+                    <input type="text" 
+                            ngModel 
+                            name="tituloSkill" 
+                            class="form-control" 
+                            id="tituloSkill" 
+                            placeholder="Habilidad" 
+                            required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="porcentajeSkill"> Porcentaje </label>
+                    <input type="text" 
+                    ngModel 
+                    name="porcentajeSkill" 
+                    class="form-control" 
+                    id="porcentajeSkill" 
+                    placeholder="Porcentaje" 
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoCircleSkill"> tipoCircleSkill </label>
+                    <input type="text" 
+                    ngModel 
+                    name="tipoCircleSkill" 
+                    class="form-control" 
+                    id="tipoCircleSkill" 
+                    placeholder="tipoCircleSkill" 
+                    required>
+                </div>
+                
+                <div class="modal-footer">
+                    <button 
+                    type="button" 
+                    id="add-habilidades-form"
+                    class="btn btn-secondary" 
+                    data-bs-dismiss="modal">
+                    Cerrar
+                    </button>
+                    <button 
+                        [disabled]="addForm.invalid"
+                        type="submit" 
+                        class="btn btn-primary" > 
+                            Guardar
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- edit modal -->
+<div class="modal fade" 
+    id="editHabilidadesModal" 
+    tabindex="-1"  
+    role="dialog" 
+    aria-labelledby="editHabilidadesModalLabel" 
+    aria-hidden="true">
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editHabilidadesModalLabel"> 
+                Editar Habilidad {{edithabilidades?.tituloSkill}} </h5>
+        </div>
+        <div class="modal-body">
+            <form #editForm="ngForm">
+                <div class="form-group">
+                    <label for="tituloSkill"> Habilidad </label>
+                    <input 
+                        type="text" 
+                        ngModel =  "{{edithabilidades?.tituloSkill}}"
+                        name="tituloSkill" 
+                        class="form-control" 
+                        id="tituloSkill" 
+                        aria-describedby="emailHelp"
+                        placeholder="tituloSkill" 
+                            
+                    />
+                </div>
+                <input 
+                    type="hidden" 
+                    ngModel= "{{edithabilidades?.idSkill}}" 
+                    name="idSkill" 
+                    id="idSkill"
+                    class="form-control"
+                    placeholder="" />
+                
+                <div class="form-group">
+                    <label for="porcentajeSkill"> Porcentaje </label>
+                    <input type="text" 
+                    ngModel = "{{edithabilidades?.porcentajeSkill}}"
+                    name="porcentajeSkill" 
+                    class="form-control" 
+                    id="porcentajeSkill" 
+                    placeholder="Porcentaje" >
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoCircleSkill"> tipoCircleSkill  </label>
+                    <input type="text" 
+                    ngModel = "{{edithabilidades?.tipoCircleSkill}}"
+                    name="tipoCircleSkill" 
+                    class="form-control" 
+                    id="tipoCircleSkill" 
+                    placeholder="tipoCircleSkill" 
+                    required>
+                </div>
+                
+                <div class="modal-footer">
+                    <button 
+                        type="button" 
+                        id=""
+                        class="btn btn-secondary" 
+                        data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                    <button 
+                        (click)="onUpdateHabilidades(editForm.value)"
+                        data-bs-dismiss="modal"  
+                        class="btn btn-primary"> 
+                            Guardar <a href=""> {{edithabilidades?.tipoCircleSkill}}</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- delete modal -->
+<div
+class="modal fade" 
+id="deleteSkillModal" 
+tabindex="-1"  
+role="dialog" 
+aria-labelledby="deleteSkillModalLabel" 
+aria-hidden="true">
+
+>
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteSkillModalLabel"> Eliminar habilidad </h5>
+        </div>
+        <div class="modal-body">
+            <p>
+                ¿Estás seguro de que quieres eliminar la habilidad {{ deleteSki?.tituloSkill }}
+            </p>
+            <div class="modal-footer">
+                <button 
+                        type="button" 
+                        class="btn btn-secondary" 
+                        data-bs-dismiss="modal">
+                        Cerrar
+                </button>
+                <button 
+                    (click)="onDeleteHabilidades(deleteSki!.idSkill)"
+                    
+                    data-bs-dismiss="modal" 
+                    class="btn btn-danger" 
+                    type="button" > 
+                        Eliminar
+                    
+                </button>
+            
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+
+
+
 
  
 

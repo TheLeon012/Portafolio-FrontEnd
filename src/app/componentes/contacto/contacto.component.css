@@ -7,3 +7,23 @@ p.letra-estilo{
     color: rgb(53, 52, 52);
 
 }
+
+.containerskill{
+
+    margin: 1% auto;
+    width: 90%;
+}
+.desvanecer {
+
+    padding: 20px;
+ 
+    opacity: 0; /* oculta el contenido */
+    transform: translateY(150px); /* desplaza hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+    scroll-snap-align: start; /* nueva propiedad */
+}
+  
+.desvanecer.inView {
+    opacity: 1; /* muestra el contenido */
+    transform: translateY(0); /* elimina el desplazamiento */
+}

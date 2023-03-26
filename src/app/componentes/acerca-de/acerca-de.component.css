@@ -12,3 +12,20 @@ p.letra-estilo{
     color: rgb(53, 52, 52);
 
 }
+
+.desvanecer {
+ 
+ 
+    scroll-margin: 200px ; /* establece el margen */
+    opacity: 0; /* oculta el contenido */
+    transform: translateY(200px); /* desplaza hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+     
+  }
+  
+.desvanecer.inView {
+    opacity: 1; /* muestra el contenido */
+    transform: translateY(0); /* elimina el desplazamiento */
+}
+
+ 

@@ -1,9 +1,29 @@
+.desvanecer {
+ 
+    padding: 20px;
+    scroll-margin: 200px ; /* establece el margen */
+    opacity: 1; /* oculta el contenido */
+    transform: translateY(400px); /* desplaza hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
+    scroll-snap-align: start; /* nueva propiedad */
+     
+  }
+  
+ .desvanecer.inView {
+    opacity: 1; /* muestra el contenido */
+    transform: translateY(0); /* elimina el desplazamiento */
+ }
+ 
 .containerskill{
 
   margin: 1% auto;
   width: 90%;
 }
 
+.botonEditor{
+    margin-top: -130%;
+}
+ 
 
 .circleTipo-1{
     position: relative;
