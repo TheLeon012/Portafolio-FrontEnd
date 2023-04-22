@@ -22,7 +22,7 @@
 }
 
 @media only screen and (max-width: 413px){
-    section.bannerFoto{
+    div.bannerFoto{
          
         width: 100%;
         height: 170vh;
@@ -42,7 +42,7 @@
 
 }
 @media only screen and (min-width:400px) and (max-width:575px){
-    section.bannerFoto{
+    div.bannerFoto{
        
         width: 100%;
         height: 200vh;
@@ -62,7 +62,7 @@
 }
 
 @media only screen and (min-width:576px) and (max-width:683px){
-    section.bannerFoto{
+    div.bannerFoto{
        
         width: 100%;
         height: 200vh;
@@ -81,7 +81,7 @@
     }
 }
 @media only screen and (min-width: 684px) and (max-width: 958px){
-    section.bannerFoto{
+    div.bannerFoto{
        
         width: 100%;
         height: 120vh;
@@ -101,7 +101,7 @@
 }
 
 @media only screen and (min-width: 959px) {
-    section.bannerFoto{
+    div.bannerFoto{
         
         width: 100%;
         height: 120vh;

@@ -13,18 +13,18 @@ export class ContactoService {
     constructor(private http:HttpClient ) { }
   
     public getCont():Observable<Contacto[]>{
-      return this.http.get<Contacto[]>(`${this.apiServerUrl}/contacto/all`);
+      return this.http.get<Contacto[]>(`${this.apiServerUrl}/api/contacto/all`);
 
     }
 
     public addCont(contacto: Contacto): Observable<Contacto>{
-        return this.http.post<Contacto>(`${this.apiServerUrl}/contacto/add`, contacto);
+        return this.http.post<Contacto>(`${this.apiServerUrl}/api/contacto/add`, contacto);
     }
 
     public updateCont(contacto: Contacto): Observable<Contacto>{
-        return this.http.put<Contacto>(`${this.apiServerUrl}/contacto/update`, contacto);
+        return this.http.put<Contacto>(`${this.apiServerUrl}/api/contacto/update`, contacto);
     }
     public deleteCont(idContac: number): Observable<void>{
-        return this.http.delete<void>(`${this.apiServerUrl}/contacto/delete/${idContac}`);
+        return this.http.delete<void>(`${this.apiServerUrl}/api/contacto/delete/${idContac}`);
     }     
 }

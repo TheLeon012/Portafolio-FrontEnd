@@ -8,6 +8,30 @@ p.letra-estilo{
 
 }
 
+
+ 
+.fa-brands.fa-facebook.fa-3x:hover{
+    --bs-text-opacity: 1;
+    color: blue !important;
+    transform: translateY(-8%);
+}
+.fa-brands.fa-instagram.fa-3x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(221, 93, 54) !important;
+    transform: translateY(-8%);
+}
+.fa-brands.fa-github.fa-3x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(0, 255, 76) !important;
+    transform: translateY(-8%);
+}
+.fa-brands.fa-linkedin.fa-3x:hover{
+    --bs-text-opacity: 1;
+    color: rgb(161, 63, 218) !important;
+    transform: translateY(-8%);
+}
+
+
 .containerskill{
 
     margin: 1% auto;

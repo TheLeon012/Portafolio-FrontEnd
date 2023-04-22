@@ -3,7 +3,7 @@
         <div style="margin-left:8.4%;">
         <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
           Proyectos 
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProyModal">
+          <button *ngIf="autentication.estaLogueado"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProyModal">
             añadir Proyecto  
           </button>
         </h2>
@@ -11,43 +11,43 @@
     </section>
     <section class="sectionproyect">
         <div class="row"> 
-          <div *ngFor="let proyec of proy" class="example-2 card col-2">
-            <div class="wrapper" style="background-image: url('{{proyec.imagenProy}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-              <div class="header">
-                <div class="date" >
-                  <span>{{proyec.fechaProy}}</span>
+            <div *ngFor="let proyec of proy" class="example-2 card col-2">
+                <div class="wrapper" style="background-image: url('{{proyec.imagenProy}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                <div class="header">
+                    <div class="date" >
+                    <span>{{proyec.fechaProy}}</span>
+                    </div>
                 </div>
-              </div>
-              <div class="data">
-                <div class="content">
-                  <h1 class="title"><a href="#"> {{proyec.tituloProy}}</a></h1>
-                  <p class="text"> {{proyec.descripcionProy}}</p>
-                  <a href="{{proyec.verMasProyURL}}" class="button">Ver mas</a>
+                <div class="data">
+                    <div class="content">
+                    <h1 class="title"><a href="#"> {{proyec.tituloProy}}</a></h1>
+                    <p class="text"> {{proyec.descripcionProy}}</p>
+                    <a href="{{proyec.verMasProyURL}}" class="button">Ver mas</a>
+                    </div>
                 </div>
-              </div>
-              <div class="botonEditor">
-                <button 
-                    (click)="onOpenModal('edit', proyec)"
-                    type="button" class="btn btn-primary" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#editProyModal"
-                    data-original-title="edit">
-                        <i class="fa fa-pencil"></i>
-                </button>
-    
-                <button 
-                    (click)="onOpenModal('delete', proyec)"
-                    type="button" 
-                    class="btn btn-danger" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#deleteProyModal"
-                    data-original-title="delete"> 
-                
-                        <i class="fas fa-times"></i>
-                </button>                 
-            </div>
-            </div>
-          </div> 
+                <div *ngIf="autentication.estaLogueado"  class="botonEditor">
+                    <button 
+                        (click)="onOpenModal('edit', proyec)"
+                        type="button" class="btn btn-primary" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#editProyModal"
+                        data-original-title="edit">
+                            <i class="fa fa-pencil"></i>
+                    </button>
+        
+                    <button 
+                        (click)="onOpenModal('delete', proyec)"
+                        type="button" 
+                        class="btn btn-danger" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#deleteProyModal"
+                        data-original-title="delete"> 
+                    
+                            <i class="fas fa-times"></i>
+                    </button>                 
+                </div>
+                </div>
+            </div> 
         </div>
        
     </section>

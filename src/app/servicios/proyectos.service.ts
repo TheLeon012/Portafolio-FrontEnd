@@ -15,7 +15,7 @@ export class ProyectosService {
     constructor(private http:HttpClient ) { }
   
     public getProy():Observable<Proyectos[]>{
-      return this.http.get<Proyectos[]>(`${this.apiServerUrl}/proyecto/all`);
+      return this.http.get<Proyectos[]>(`${this.apiServerUrl}/api/proyecto/all`);
 
     }
 

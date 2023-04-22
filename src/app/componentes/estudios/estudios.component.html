@@ -1,12 +1,12 @@
 <h3 class="text-estilo fw-bold " style="text-align:center; ">
     Cursos
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCursoModal">
+    <button  *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCursoModal">
         añadir certificado
     </button>
 </h3>
 <section style="text-align:center">
     <div class="row">
-        <div id="carouselExample" class="carousel slide col-xl-12 col-md-12 col-sm-12  col-12">
+        <div id="carouselExample" class="carousel slide col-xl-12 col-md-12 col-sm-12 col-12">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <h4>  </h4>
@@ -15,7 +15,7 @@
                 <div class="carousel-item text-align:center" *ngFor="let curs of cursos"  >
                     
                     <img src="{{curs.certificadoUrlCurso}} " style="border: 2px solid rgb(35, 36, 34); z-index: -1; margin:auto;"  width="365" height="258" class="d-block" alt="">  
-                    <div>
+                    <div *ngIf="autentication.estaLogueado">
                         <button 
                             (click)="onOpenModal('edit', curs)"
                             type="button" class="btn btn-primary" 

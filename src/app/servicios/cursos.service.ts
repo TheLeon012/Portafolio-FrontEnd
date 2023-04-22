@@ -15,19 +15,19 @@ export class CursosService {
     constructor(private http:HttpClient ) { }
   
     public getCurso():Observable<Cursos[]>{
-      return this.http.get<Cursos[]>(`${this.apiServerUrl}/cursos/all`);
+      return this.http.get<Cursos[]>(`${this.apiServerUrl}/api/cursos/all`);
 
     }
 
     public addCurso(cursos: Cursos): Observable<Cursos>{
-        return this.http.post<Cursos>(`${this.apiServerUrl}/cursos/add`, cursos);
+        return this.http.post<Cursos>(`${this.apiServerUrl}/api/cursos/add`, cursos);
     }
 
     public updateCurso(cursos: Cursos): Observable<Cursos>{
-        return this.http.put<Cursos>(`${this.apiServerUrl}/cursos/update`, cursos);
+        return this.http.put<Cursos>(`${this.apiServerUrl}/api/cursos/update`, cursos);
     }
     public deleteCurso(idCurso: number): Observable<void>{
-        return this.http.delete<void>(`${this.apiServerUrl}/cursos/delete/${idCurso}`);
+        return this.http.delete<void>(`${this.apiServerUrl}/api/cursos/delete/${idCurso}`);
     }
   
      

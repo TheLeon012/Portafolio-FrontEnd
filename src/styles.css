@@ -1,9 +1,9 @@
 * {
-  
-    
     font-family: Arial, Helvetica, sans-serif;
+    --bs-body-bg: #EAEAEA ;
+    
   }
-
+ 
  
 .fondo{
     background: #dbd9d7;
@@ -23,16 +23,10 @@
     height: 100px; 
     width: auto;
 }
-.hoverArgpr:hover {
-    color: aqua;
-    transform: scale(1.2); 
-}
+ 
 
 /* logo argnetina programa*/
-.hover-Argpr:hover{
-    transform: scale(1.2); 
-   
-}
+ 
 .hover-Argpr{
     width: 70%;
 }
@@ -44,7 +38,6 @@
     background-color: rgb(110, 114, 114);
     
 }
-
 /* list group es para poner la lista de redes con fondo transparente*/
 .list-group-item{
     --bs-list-group-bg: transparent;
@@ -57,42 +50,8 @@
     --bs-list-group-bg:transparent;
     --bs-list-group-border-color:transparent;
 }
- 
-.fa-brands.fa-facebook.fa-3x:hover{
-    --bs-text-opacity: 1;
-    color: blue !important;
-    transform: translateY(-8%);
-}
-.fa-brands.fa-instagram.fa-3x:hover{
-    --bs-text-opacity: 1;
-    color: rgb(221, 93, 54) !important;
-    transform: translateY(-8%);
-}
-.fa-brands.fa-github.fa-3x:hover{
-    --bs-text-opacity: 1;
-    color: rgb(0, 255, 76) !important;
-    transform: translateY(-8%);
-}
-.fa-brands.fa-linkedin.fa-3x:hover{
-    --bs-text-opacity: 1;
-    color: rgb(161, 63, 218) !important;
-    transform: translateY(-8%);
-}
 
-.fa-sharp.fa-user-lock.fa-2x:hover{
-    --bs-text-opacity: 1;
-    color: rgb(63, 218, 84) !important;
-    transform: translateY(-8%);
-}
 
-div.margenNavBarRedes{
-    position: absolute;
-    left: 100px;
-    color: aqua;
-    width: 1000px;
-    height: 55px;
-   
-}
  
 
 @media only screen and (max-width: 413px){
@@ -200,16 +159,6 @@ nav.img{
 }
 
 
-
-nav.fixed-header{
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
-    
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-}
 
  
 

@@ -4,7 +4,7 @@
             <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
             Habilidades  
              
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHabilidadesModal">
+            <button *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHabilidadesModal">
                 añadir habilidad
             </button>
             </h2>
@@ -14,7 +14,8 @@
     
     <section class="containerskill">
         <div class="row">
-            <div class="containerskill" *ngFor="let skill of habilidades" [ngClass]="'circleTipo-' + skill.tipoCircleSkill">
+            <div class="containerskill" *ngFor="let skill of habilidades" 
+            [ngClass]="{'circleTipo-1': skill.porcentajeSkill < 30, 'circleTipo-2': skill.porcentajeSkill >= 30 && skill.porcentajeSkill < 60,'circleTipo-3': skill.porcentajeSkill >= 60 && skill.porcentajeSkill < 85 ,'circleTipo-4': skill.porcentajeSkill >= 85}">
                 <div>
                     <div class="ui-widget" >
                         <div> 
@@ -22,7 +23,8 @@
                             <span class="ui-label">{{skill.tituloSkill}} </span>
                         </div>
                     </div>
-                    <div>
+
+                    <div *ngIf="autentication.estaLogueado">
                         <button 
                             (click)="onOpenModal('edit', skill)"
                             type="button" class="btn btn-primary botonEditor" 
@@ -44,9 +46,10 @@
                         </button>                 
                     </div>
                 </div>
+            
             </div> 
         </div>
-    
+      
     
         
     </section>
@@ -168,17 +171,6 @@ aria-hidden="true">
                     id="porcentajeSkill" 
                     placeholder="Porcentaje" >
                 </div>
-
-                <div class="form-group">
-                    <label for="tipoCircleSkill"> tipoCircleSkill  </label>
-                    <input type="text" 
-                    ngModel = "{{edithabilidades?.tipoCircleSkill}}"
-                    name="tipoCircleSkill" 
-                    class="form-control" 
-                    id="tipoCircleSkill" 
-                    placeholder="tipoCircleSkill" 
-                    required>
-                </div>
                 
                 <div class="modal-footer">
                     <button 
@@ -192,7 +184,7 @@ aria-hidden="true">
                         (click)="onUpdateHabilidades(editForm.value)"
                         data-bs-dismiss="modal"  
                         class="btn btn-primary"> 
-                            Guardar <a href=""> {{edithabilidades?.tipoCircleSkill}}</a>
+                            Guardar 
                     </button>
                 </div>
             </form>

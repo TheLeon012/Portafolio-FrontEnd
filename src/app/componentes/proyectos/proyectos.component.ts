@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proyectos } from 'src/app/models/proyectos';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
  
 
@@ -18,7 +19,7 @@ export class ProyectosComponent implements OnInit {
   public editProyectos:Proyectos | undefined;
   public deleteProyecto:Proyectos | undefined;
  
-  constructor(private proyectosService:ProyectosService){}
+  constructor(private proyectosService:ProyectosService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
 

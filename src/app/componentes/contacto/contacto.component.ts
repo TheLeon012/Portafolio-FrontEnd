@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Contacto } from 'src/app/models/contacto';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ContactoService } from 'src/app/servicios/contacto.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ContactoComponent implements OnInit {
   public deleteCont: Contacto | undefined;
 
  
-  constructor(private contactoService : ContactoService){
+  constructor(private contactoService : ContactoService, public autentication:AutenticacionService){
 
   }
 

@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Cursos } from 'src/app/models/cursos';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { CursosService } from 'src/app/servicios/cursos.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class EstudiosComponent {
   public editCurso: Cursos | undefined;
   public deleteCurso:Cursos | undefined;
 
-  constructor(private cursosService:CursosService){}
+  constructor(private cursosService:CursosService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
 

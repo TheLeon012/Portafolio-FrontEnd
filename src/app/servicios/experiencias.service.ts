@@ -15,19 +15,19 @@ export class ExperienciasService {
     constructor(private http:HttpClient ) { }
   
     public getExp():Observable<Experiencias[]>{
-      return this.http.get<Experiencias[]>(`${this.apiServerUrl}/experiencia/all`);
+      return this.http.get<Experiencias[]>(`${this.apiServerUrl}/api/experiencia/all`);
 
     }
 
     public addExp(experiencias: Experiencias): Observable<Experiencias>{
-        return this.http.post<Experiencias>(`${this.apiServerUrl}/experiencia/add`, experiencias);
+        return this.http.post<Experiencias>(`${this.apiServerUrl}/api/experiencia/add`, experiencias);
     }
 
     public updateExp(experiencias: Experiencias): Observable<Experiencias>{
-        return this.http.put<Experiencias>(`${this.apiServerUrl}/experiencia/update`, experiencias);
+        return this.http.put<Experiencias>(`${this.apiServerUrl}/api/experiencia/update`, experiencias);
     }
     public deleteExp(idExp: number): Observable<void>{
-        return this.http.delete<void>(`${this.apiServerUrl}/experiencia/delete/${idExp}`);
+        return this.http.delete<void>(`${this.apiServerUrl}/api/experiencia/delete/${idExp}`);
     }
   
      

@@ -1,5 +1,6 @@
+ 
 .acercademi{
-    font-size: 2.5rem; text-align: left;
+    font-size: 2.5rem; text-align: center;
     padding-top: 6%;
  
 }
@@ -7,7 +8,7 @@
 p.letra-estilo{
     line-height: 2;
     font-size: 1.1rem;
-    text-align: left;
+    text-align: center;
     font-weight: 350;
     color: rgb(53, 52, 52);
 

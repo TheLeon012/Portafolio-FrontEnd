@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class BannerComponent implements OnInit{
   public editUsuario : Usuario | undefined;
 
  
-  constructor(private portafolioService : PortafolioService){
+  constructor(private portafolioService : PortafolioService,  public autentication:AutenticacionService){
 
   }
 

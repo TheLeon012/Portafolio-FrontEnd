@@ -2,6 +2,43 @@
     color: white;
     margin-top: 10%;
 }
+
+.mano{
+    cursor: pointer;
+}
 .fa-1x:hover{
-    color: aqua;
+
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+ul li.active-link:not(:hover){
+    text-decoration: underline;
+}
+
+nav.fixed-header{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+nav.abajo{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#login:hover{
+ 
+    color: rgb(63, 218, 84) !important;
+    transform: translateY(-8%);
+     
 }

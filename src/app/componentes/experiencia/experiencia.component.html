@@ -3,7 +3,7 @@
         <div style="margin-left:8.4%; padding-top: 6%;">
         <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
           Experiencia 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpModal">
+        <button *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpModal">
             añadir Experiencia  
         </button>
         </h2>
@@ -18,7 +18,7 @@
     
                 </div>
                 <div class="col-xl-10 col-8  ">
-                    <div class="botonEditor">
+                    <div *ngIf="autentication.estaLogueado" class="botonEditor">
                         <button 
                             (click)="onOpenModal('edit', experiencias)"
                             type="button" class="btn btn-primary" 

@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
  
 
 @Component({
@@ -6,13 +7,20 @@ import { Component} from '@angular/core';
   templateUrl: './encabezado.component.html',
   styleUrls: ['./encabezado.component.css']
 })
-export class EncabezadoComponent    {
+export class EncabezadoComponent {
 
  
-  constructor( ){
+  constructor(public autentication:AutenticacionService ){
 
   }
-   
+
+  ngOnInit(){
+    window.addEventListener("scroll", function(){
+      var nav = document.querySelector("nav");
+      nav?.classList.toggle("abajo", window.scrollY>600)
+    })
+  }
+
   toacerde(){
     document.getElementById("acercade")?.scrollIntoView();
 
@@ -40,5 +48,4 @@ export class EncabezadoComponent    {
  
 
 
-
-}
+ }

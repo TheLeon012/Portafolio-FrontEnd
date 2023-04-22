@@ -1,11 +1,11 @@
-<section class="bannerFoto" 
-        [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+<div class="bannerFoto" 
+        [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95), rgba(0,0,0,0.01)), 
         url('  + usuario?.fotoBanner +  ')'">
 
-    <section style="position:relative; top:150px">
+    <div style="position:relative; top:150px">
     <div class="container desvanecer">
       <div class="row" >
-        
+
         <div class="col-xl-4 col-md col-sm-9 ">
           <img src="{{usuario?.fotoPerfil}}" alt="Foto Perfil" class="  imgCircularGrande">
         </div>
@@ -20,7 +20,7 @@
           <h3 class="text-center text-white intro">
              {{usuario?.titulo}}
           </h3>
-          <div class="botonEditor">
+          <div *ngIf="autentication.estaLogueado" class="botonEditor">
             <button 
                 (click)="onOpenModal('edit', usuario)"
                 type="button" class="btn btn-primary" 
@@ -33,8 +33,8 @@
         </div>
       </div> 
     </div>
-    </section>
-</section>
+  </div>
+</div>
 
 
   <!-- edit modal -->

@@ -1,10 +1,11 @@
-<section class="presentacion mt-2">
+<section>
     <div class="container text-center desvanecer">
         <div class="row">
-            <div class="col-xl-5  col-sm-12 mt-2">
+            <div class="col-xl-2 col-sm-3"></div>
+            <div class="col-xl-8  col-sm-6 mt-2">
                 <h2 class="acercademi fw-bold mt-5">
                 Acerca de mi  
-                    <button 
+                    <button *ngIf="autentication.estaLogueado" 
                         (click)="onUpdateAcercade"
                         type="button" class="btn btn-primary botonEditor" 
                         data-bs-toggle="modal" 
@@ -16,8 +17,11 @@
                         {{usuario?.descripcion}} </p>
                 </h2>
             </div>
+            <div class="col-xl-2 col-sm-3"></div>
+            
         </div>
     </div>
+    
     <!-- edit modal -->
     <div class="modal fade" 
         id="editAcercadeModal" 
@@ -34,17 +38,19 @@
                 <div class="modal-body">
                     <form #editForm="ngForm">
                         <div class="form-group">
-                            <label for="descripcion"> Descripcion  </label>
-                            <input 
-                                type="text" 
-                                ngModel =  "{{usuario?.descripcion}}"
+                            <div class="mb-3">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea 
+                                type="text"
+                                ngModel ="{{usuario?.descripcion}}"
                                 name="descripcion" 
-                                class="form-control" 
                                 id="descripcion" 
                                 aria-describedby="emailHelp"
-                                placeholder="Descripcion"    
-                            />
+                                placeholder="Descripcion"  
+                                class="form-control" ></textarea>
+                              </div>
                         </div>
+                        
                         <!-- estos input mantienen los use para no modificar las demas variables -->
                         <input 
                             type="hidden" 

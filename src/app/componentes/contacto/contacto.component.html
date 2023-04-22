@@ -3,7 +3,8 @@
         <div class="container text-center">
         <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
           Contacto
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addContModal">
+
+          <button *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addContModal">
             añadir Contacto
           </button>
         </h2>
@@ -25,8 +26,8 @@
                       <h4 style="font-size: 1rem;"> {{cont?.descripcionContacto}} </h4>
                     </div>
                   </div>
-                  <div>
-                    <button 
+                  <div *ngIf="autentication.estaLogueado">
+                    <button  
                         (click)="onOpenModal('edit', cont)"
                         type="button" class="btn btn-primary botonEditor" 
                         data-bs-toggle="modal" 

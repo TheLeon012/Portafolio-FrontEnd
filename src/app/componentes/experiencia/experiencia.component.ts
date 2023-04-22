@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Experiencias } from 'src/app/models/experiencias';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ExperienciasService } from 'src/app/servicios/experiencias.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ExperienciaComponent implements OnInit{
   public editExperiencias:Experiencias | undefined;
   public deleteExperiencias:Experiencias | undefined;
  
-  constructor(private experienciasService:ExperienciasService){}
+  constructor(private experienciasService:ExperienciasService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
 

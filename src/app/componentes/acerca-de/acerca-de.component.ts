@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
@@ -12,23 +13,28 @@ export class AcercaDeComponent {
 
   public usuario : Usuario | undefined;
   public editUsuario : Usuario | undefined;
+  isSubrayado: boolean = false;
 
-  constructor(private portafolioService : PortafolioService){
+  constructor(private portafolioService : PortafolioService, 
+    public autentication:AutenticacionService){
 
   }
 
   ngOnInit(): void {
     this.getUser();
     "use strict";
+    
 
     let boxes = Array.from(document.querySelectorAll(".desvanecer"));
     
     let scroller = () => {
       boxes.forEach(desvanecer => {
         if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
-          desvanecer.classList.add("inView");
+          desvanecer.classList.add("inView") 
+          this.isSubrayado=true;
         } else {
-          desvanecer.classList.remove("inView");
+          desvanecer.classList.remove("inView")
+          this.isSubrayado=false;
         }
       });
     };

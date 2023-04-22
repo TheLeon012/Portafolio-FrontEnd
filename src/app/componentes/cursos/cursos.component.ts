@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/models/educacion';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
  
 @Component({
@@ -16,11 +17,12 @@ export class CursosComponent implements OnInit {
   public deleteEdu:Educacion | undefined;
 
   cursosLista: any;
-  constructor(private educationService:EducacionService){}
+  constructor(private educationService:EducacionService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
 
     this.getEdu();
+    
     "use strict";
     let boxes = Array.from(document.querySelectorAll(".desvanecer"));
     
@@ -36,9 +38,7 @@ export class CursosComponent implements OnInit {
     
     window.addEventListener("load", scroller, false);
     window.addEventListener("scroll", scroller, false);
-
-
-     
+ 
   }
 
   public getEdu():void{
