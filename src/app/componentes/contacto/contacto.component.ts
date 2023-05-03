@@ -47,10 +47,7 @@ export class ContactoComponent implements OnInit {
     this.contactoService.getCont().subscribe({
       next:(Response: Contacto[]) =>{
         this.contacto=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
   public onOpenModal(mode:String, contacto?:Contacto):void{
@@ -79,11 +76,7 @@ export class ContactoComponent implements OnInit {
         console.log(response);
         this.getCont();
         addForm.reset();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -108,10 +101,7 @@ export class ContactoComponent implements OnInit {
       next: (response:void) =>{
         console.log(response);
         this.getCont();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }

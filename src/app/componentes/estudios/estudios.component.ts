@@ -29,10 +29,7 @@ export class EstudiosComponent {
     this.cursosService.getCurso().subscribe({
       next:(Response: Cursos[]) =>{
         this.cursos=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
 
@@ -64,11 +61,7 @@ export class EstudiosComponent {
         this.getCurso();
         addForm.reset();
         window.location.reload();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -82,11 +75,7 @@ export class EstudiosComponent {
         this.getCurso();
         window.location.reload();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
 
@@ -97,10 +86,7 @@ export class EstudiosComponent {
         console.log(response);
         this.getCurso();
         window.location.reload();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }

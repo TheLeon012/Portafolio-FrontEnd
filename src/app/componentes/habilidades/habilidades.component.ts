@@ -44,10 +44,7 @@ export class HabilidadesComponent implements OnInit{
     this.habilidadesService.getSkill().subscribe({
       next:(Response: Habilidades[]) =>{
         this.habilidades=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
   
@@ -78,11 +75,7 @@ export class HabilidadesComponent implements OnInit{
         console.log(response);
         this.getSkill();
         addForm.reset();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -94,11 +87,7 @@ export class HabilidadesComponent implements OnInit{
         console.log(response);
         this.getSkill();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
 
@@ -108,10 +97,7 @@ export class HabilidadesComponent implements OnInit{
       next: (response:void) =>{
         console.log(response);
         this.getSkill();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }

@@ -44,10 +44,7 @@ export class BannerComponent implements OnInit{
         this.usuario=response;
  
 
-      },
-      error:(error:HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
 
@@ -76,11 +73,8 @@ export class BannerComponent implements OnInit{
         console.log(response);
         this.getUser();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
+      
     })
   }
    

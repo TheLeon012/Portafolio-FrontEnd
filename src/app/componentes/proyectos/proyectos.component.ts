@@ -47,10 +47,7 @@ export class ProyectosComponent implements OnInit {
     this.proyectosService.getProy().subscribe({
       next:(Response: Proyectos[]) =>{
         this.proy=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
   
@@ -81,11 +78,7 @@ export class ProyectosComponent implements OnInit {
         console.log(response);
         this.getProy();
         addForm.reset();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -97,11 +90,7 @@ export class ProyectosComponent implements OnInit {
         console.log(response);
         this.getProy();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
 
@@ -111,10 +100,7 @@ export class ProyectosComponent implements OnInit {
       next: (response:void) =>{
         console.log(response);
         this.getProy();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }

@@ -47,10 +47,7 @@ export class AcercaDeComponent {
     this.portafolioService.getUser().subscribe({
       next: (response: Usuario) =>{
         this.usuario=response;
-      },
-      error:(error:HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
 
@@ -62,11 +59,7 @@ export class AcercaDeComponent {
         console.log(response);
         this.getUser();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
  

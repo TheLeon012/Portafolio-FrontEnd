@@ -44,10 +44,7 @@ export class ExperienciaComponent implements OnInit{
     this.experienciasService.getExp().subscribe({
       next:(Response: Experiencias[]) =>{
         this.exper=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
   
@@ -78,11 +75,7 @@ export class ExperienciaComponent implements OnInit{
         console.log(response);
         this.getExp();
         addForm.reset();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -94,11 +87,7 @@ export class ExperienciaComponent implements OnInit{
         console.log(response);
         this.getExp();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
 
@@ -108,10 +97,7 @@ export class ExperienciaComponent implements OnInit{
       next: (response:void) =>{
         console.log(response);
         this.getExp();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }

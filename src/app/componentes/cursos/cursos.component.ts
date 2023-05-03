@@ -45,10 +45,7 @@ export class CursosComponent implements OnInit {
     this.educationService.getEdu().subscribe({
       next:(Response: Educacion[]) =>{
         this.educacion=Response;
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
+      } 
     })
   }
 
@@ -79,11 +76,7 @@ export class CursosComponent implements OnInit {
         console.log(response);
         this.getEdu();
         addForm.reset();
-      },
-      error:(error: HttpErrorResponse) =>{
-        alert(error.message);
-        addForm.reset();
-      }
+      } 
     })
   }
 
@@ -96,11 +89,7 @@ export class CursosComponent implements OnInit {
         console.log(response);
         this.getEdu();
   
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
- 
-      }
+      } 
     })
   }
 
@@ -110,10 +99,7 @@ export class CursosComponent implements OnInit {
       next: (response:void) =>{
         console.log(response);
         this.getEdu();
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
+      } 
     })
   }    
 }
