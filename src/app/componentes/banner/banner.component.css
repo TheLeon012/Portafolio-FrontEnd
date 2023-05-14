@@ -119,3 +119,81 @@
         -msm-background-size: cover;
     }
 }
+
+@media only screen and (max-width: 413px){
+    .imgCircularGrande{
+        text-align: center;
+        position: relative;
+        left: 18%;
+        right: 60%;
+        padding-bottom: 3%;
+        margin-top: -10%;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:575px){
+    .imgCircularGrande{
+        text-align: center;
+        position: relative;
+        left: 20%;
+        right: 60%;
+        bottom: 20%;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width:576px) and (max-width:683px){
+    .imgCircularGrande{
+        text-align: center;
+        position: relative;
+        left: 39%;
+        right: 60%;
+        bottom: 20%;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 684px) and (max-width: 958px){
+    .imgCircularGrande{
+        text-align: center;
+        position: relative;
+        left: 30%;
+        right: 60%;
+        bottom: 20%;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 959px) {
+    .imgCircularGrande{
+        text-align: center;
+        position: relative;
+        left: 50%;
+        right: 60%;
+         
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+    .margenDescripcion{ 
+        position: relative;
+        top: 50px;
+    }
+}
+
+.imgCircular{
+    border-radius: 50%;
+    width: 171px;
+    height: 171px;
+    overflow: hidden;
+}

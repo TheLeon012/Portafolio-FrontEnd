@@ -1,37 +1,36 @@
- <section>
-    <div class="container bg-black   rounded shadow" >
-        <div class="row aling-items-stretch">
-            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"> </div>
-                <div class="col bg-black p-2 rounded-end">
-                    <a href=""><i class="fa-solid fa-left-long fa-3x"></i></a>  
-                    <h2 class="fw-bold text-center text-white Bienvenido">Bienvenido</h2>
-                    <form [formGroup]="form" action="#" (ngSubmit)="onEnviar($event)">
-                        <div class="mb-4 text-white formularioLogin" >
-                            <label for="email" class="form-label">Correo electronico</label>
-                            <input type="email"  autocomplete="email" formControlName="email" 
-                            [ngClass]="{'is-invalid':Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
-                            class="form-control" name="email">
-                            <div *ngIf="Email?.errors && Email?.touched">
-                                <p *ngIf="Email?.hasError('required')" class="text-danger">El email es requerido</p>
-                                <p *ngIf="Email?.hasError('email')" class="text-danger">El formato del email debe ser valido</p>
+ <section  class="bannerFoto"
+ [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95), rgba(0,0,0,0.01)), 
+        url(' + usuario?.fotoBanner +  ')'">
+    
+        <div class="formulario">
+        <h2 class="fw-bold text-center text-white">Bienvenido</h2>
+        <div>
+            <form [formGroup]="form" action="#" (ngSubmit)="onEnviar($event)">
+                <div class="mb-4 text-white">
+                    <label for="email" class="form-label">Correo electronico</label>
+                    <input type="email"  autocomplete="email" formControlName="email" 
+                    [ngClass]="{'is-invalid':Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+                    class="form-control" name="email">
+                    <div *ngIf="Email?.errors && Email?.touched">
+                        <p *ngIf="Email?.hasError('required')" class="text-danger">El email es requerido</p>
+                        <p *ngIf="Email?.hasError('email')" class="text-danger">El formato del email debe ser valido</p>
 
-                            </div>
-                        </div>
-                        <div class="mb-4 text-white formularioLogin" >
-                            <label for="email" class="form-label">Contraseña</label>
-                            <input type="password" formControlName="password" 
-                            [ngClass]="{'is-invalid':Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
-                            class="form-control" name="Contraseña">
-                            <div *ngIf="Password?.errors && Password?.touched">
-                                <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida</p>  
-                            </div>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                        </div>       
-                    </form>
+                    </div>
                 </div>
-        </div>
-    </div> 
+                <div class="mb-4 text-white" >
+                    <label for="email" class="form-label">Contraseña</label>
+                    <input type="password" formControlName="password" 
+                    [ngClass]="{'is-invalid':Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+                    class="form-control" name="Contraseña">
+                    <div *ngIf="Password?.errors && Password?.touched">
+                        <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida</p>  
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>       
+            </form>
+        </div>    
+    </div>   
 </section>
     

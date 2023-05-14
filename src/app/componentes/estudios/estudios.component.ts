@@ -21,8 +21,9 @@ export class EstudiosComponent {
   ngOnInit(): void{
 
     this.getCurso();
+    
+ 
 
-     
   }
 
   public getCurso():void{
@@ -61,6 +62,8 @@ export class EstudiosComponent {
         this.getCurso();
         addForm.reset();
         window.location.reload();
+        this.autentication.estaLogueado = true;
+        
       } 
     })
   }
@@ -74,6 +77,7 @@ export class EstudiosComponent {
         console.log(response);
         this.getCurso();
         window.location.reload();
+        this.autentication.estaLogueado = true;
   
       } 
     })
@@ -86,6 +90,7 @@ export class EstudiosComponent {
         console.log(response);
         this.getCurso();
         window.location.reload();
+        this.autentication.estaLogueado = true;
       } 
     })
   }    

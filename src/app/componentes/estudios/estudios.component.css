@@ -1,12 +1,13 @@
 img{
-    border: 2px solid rgb(35, 36, 34); 
-    z-index: -1; 
     margin:auto;
     width: 362px;
-    height: 271px ;
+    height: 271px;
     object-fit: scale-down;
     object-position: center;
 }
+
+ 
+
 
  
  

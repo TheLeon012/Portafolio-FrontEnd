@@ -73,7 +73,7 @@ export class ProyectosComponent implements OnInit {
 
   public onAddProyecto(addForm : NgForm): void{
     document.getElementById('add-proyecto-form')?.click();
-    this.proyectosService.addExp(addForm.value).subscribe({
+    this.proyectosService.addProy(addForm.value).subscribe({
       next: (response:Proyectos) =>{
         console.log(response);
         this.getProy();
@@ -85,7 +85,7 @@ export class ProyectosComponent implements OnInit {
   public onUpdateProyecto(proyectos : Proyectos){
     this.editProyectos=proyectos;
     document.getElementById('add-proyecto-form')?.click();
-    this.proyectosService.updateExp(proyectos).subscribe({
+    this.proyectosService.updateProy(proyectos).subscribe({
       next: (response:Proyectos) =>{
         console.log(response);
         this.getProy();
@@ -94,9 +94,9 @@ export class ProyectosComponent implements OnInit {
     })
   }
 
-  public onDeleteExperiencias(idProy:number):void{
+  public onDeleteProy(idProy:number):void{
 
-    this.proyectosService.deleteExp(idProy).subscribe({
+    this.proyectosService.deleteProy(idProy).subscribe({
       next: (response:void) =>{
         console.log(response);
         this.getProy();

@@ -1,18 +1,19 @@
-<div class="bannerFoto" 
+  <!-- el style backgroundImage lo utilize para generar un gradiente en el banner -->
+<div class="bannerFoto"  
         [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95), rgba(0,0,0,0.01)), 
-        url('  + usuario?.fotoBanner +  ')'">
-
+        url('  + usuario?.fotoBanner +  ')'"> 
+  
     <div style="position:relative; top:150px">
     <div class="container desvanecer">
       <div class="row" >
 
         <div class="col-xl-4 col-md col-sm-9 ">
-          <img src="{{usuario?.fotoPerfil}}" alt="Foto Perfil" class="  imgCircularGrande">
+          <img src="{{usuario?.fotoPerfil}}" alt="Foto Perfil" class="imgCircularGrande">
         </div>
         
         <div class="col-xl-8 col-md col-sm-12 margenDescripcion"> 
           <h4 class="text-center text-white intro">
-            Bienvenidos   
+            Bienvenido!  
           </h4>
           <h2 class="text-center fw-bold intro" style="color: rgb(21, 133, 161);">
             Soy  {{usuario?.nombre}} {{usuario?.apellido}}

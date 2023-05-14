@@ -1,11 +1,4 @@
- 
-
 section{
-    background-image: linear-gradient(
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.9)
-    ), url(/assets/img/banner.jpg) ;
- 
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -19,30 +12,41 @@ section{
     -msm-background-size: cover;
     overflow-y: hidden; 
 }
-.bg{
-    width: 40vw;
-    height: 100vh;
-
-    background-image: url(/assets/img/Registro1.jpg);
-    background-position: center center;
-}
-.container{
-     
-    transform: scale(0.75);
-}
+ 
+ 
 
 .Bienvenido{
     margin-top: 18%;
     margin-right: 2%;
 }
 
-.formularioLogin{
-    margin: 6%;
-
+.formulario{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+ 
+    height: 80%;
+    width: 40%;
+    padding: 7%;
+ 
 }
 
 .d-grid{
     width: 50%;
     margin: auto
  
+}
+
+bannerFoto{
+         
+     
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -msm-background-size: cover; 
 }

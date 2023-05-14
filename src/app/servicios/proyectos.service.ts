@@ -19,15 +19,15 @@ export class ProyectosService {
 
     }
 
-    public addExp(proyectos: Proyectos): Observable<Proyectos>{
-        return this.http.post<Proyectos>(`${this.apiServerUrl}/proyecto/add`, proyectos);
+    public addProy(proyectos: Proyectos): Observable<Proyectos>{
+        return this.http.post<Proyectos>(`${this.apiServerUrl}/api/proyecto/add`, proyectos);
     }
 
-    public updateExp(proyectos: Proyectos): Observable<Proyectos>{
-        return this.http.put<Proyectos>(`${this.apiServerUrl}/proyecto/update`, proyectos);
+    public updateProy(proyectos: Proyectos): Observable<Proyectos>{
+        return this.http.put<Proyectos>(`${this.apiServerUrl}/api/proyecto/update`, proyectos);
     }
-    public deleteExp(idProy: number): Observable<void>{
-        return this.http.delete<void>(`${this.apiServerUrl}/proyecto/delete/${idProy}`);
+    public deleteProy(idProy: number): Observable<void>{
+        return this.http.delete<void>(`${this.apiServerUrl}/api/proyecto/delete/${idProy}`);
     }
   
      
