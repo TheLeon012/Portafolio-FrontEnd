@@ -2,20 +2,16 @@
     color: white;
     margin-top: 10%;
 }
-
 .mano{
     cursor: pointer;
 }
 .fa-1x:hover{
-
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
-
 ul li.active-link:not(:hover){
     text-decoration: underline;
 }
-
 nav.fixed-header{
     position: fixed;
     background-color: rgba(0, 0, 0, 0);
@@ -25,8 +21,6 @@ nav.fixed-header{
     left: 0;
     right: 0;
 }
-
-
 nav.abajo{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.85);
@@ -35,18 +29,11 @@ nav.abajo{
     left: 0;
     right: 0;
 }
-
 #login:hover{
- 
     color: rgb(63, 218, 84) !important;
     transform: translateY(-8%);
-     
 }
-
 /* logo argnetina programa*/
- 
-
-
 @media (max-width: 992px) {
     .list-group-horizontal {
         flex-direction: column !important;

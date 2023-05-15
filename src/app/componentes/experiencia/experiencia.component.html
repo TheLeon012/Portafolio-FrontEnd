@@ -9,13 +9,11 @@
         </h2>
         </div>
     </section>
-    
     <div style="margin: 2% 8.4%;" *ngFor="let experiencias of exper"> 
         <ul>
             <li class="row " >
                 <div class="col-xl-2 col-4 ">
                       <img src= {{experiencias.imagenExp}} alt="" style="width: 75%;">
-    
                 </div>
                 <div class="col-xl-10 col-8  ">
                     <div *ngIf="autentication.estaLogueado" class="botonEditor">
@@ -48,9 +46,6 @@
     </div>
 
 </section>
-
-
-
   <!-- add modal -->
 <div class="modal fade" 
   id="addExpModal" 
@@ -142,10 +137,7 @@
       </div>
   </div>
 </div>
-  
-  
   <!-- edit modal -->
-  
 <div class="modal fade" 
   id="editExpModal" 
   tabindex="-1"  
@@ -243,11 +235,7 @@
       </div>
   </div>
 </div>
-
-
-   
   <!-- delete modal -->
-  
 <div
   class="modal fade" 
   id="deleteExpModal" 

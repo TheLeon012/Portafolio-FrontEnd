@@ -2,16 +2,13 @@
     <section class="mt-2 text-center">
         <div style="margin-left:8.4%; padding-top: 6%; padding-bottom: 2%;">
             <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
-            Habilidades  
-             
+            Habilidades
             <button *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHabilidadesModal">
                 añadir habilidad
             </button>
             </h2>
         </div>
-        
     </section>
-    
     <section class="containerskill">
         <div class="row">
             <div class="containerskill" *ngFor="let skill of habilidades" 
@@ -23,7 +20,6 @@
                             <span class="ui-label">{{skill.tituloSkill}} </span>
                         </div>
                     </div>
-
                     <div *ngIf="autentication.estaLogueado">
                         <button 
                             (click)="onOpenModal('edit', skill)"
@@ -33,7 +29,6 @@
                             data-original-title="edit">
                                 <i class="fa fa-pencil"></i>
                         </button>
-    
                         <button 
                             (click)="onOpenModal('delete', skill)"
                             type="button" 
@@ -41,19 +36,13 @@
                             data-bs-toggle="modal" 
                             data-bs-target="#deleteSkillModal"
                             data-original-title="delete"> 
-                        
                                 <i class="fas fa-times"></i>
                         </button>                 
                     </div>
                 </div>
-            
             </div> 
         </div>
-      
-    
-        
     </section>
-
 </section>
 
 <!-- add modal -->
@@ -63,7 +52,6 @@ tabindex="-1"
 role="dialog" 
 aria-labelledby="addHabilidadesModalLabel" 
 aria-hidden="true">
-
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">

@@ -5,55 +5,46 @@
     </button>
 </h3>
 <section style="text-align:center">
-    
-<div class="row">
-    <div id="carouselExampleRide" class="carousel slide col-xl-12 col-md-12 col-sm-12 col-12" data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://sendpulse.com/blog/wp-content/uploads/2022/10/Certificados-para-cursos-en-linea_banner-1200x675.png" class="d-block w-100" alt="...">
-          </div>
-           
-          <div class="carousel-item" *ngFor="let curs of cursos" >
-            <img src="{{curs.certificadoUrlCurso}} " class="d-block w-100" alt="...">
-            <div *ngIf="autentication.estaLogueado">
-                <button 
-                    (click)="onOpenModal('edit', curs)"
-                    type="button" class="btn btn-primary" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#editCursoModal"
-                    data-original-title="edit">
-                        <i class="fa fa-pencil"></i>
-                </button>
-                <button 
-                    (click)="onOpenModal('delete', curs)"
-                    type="button" 
-                    class="btn btn-danger" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#deleteCursoModal"
-                    data-original-title="delete"> 
-                        <i class="fas fa-times"></i>
-                </button>                  
+    <div class="row">
+        <div id="carouselExampleRide" class="carousel slide col-xl-12 col-md-12 col-sm-12 col-12" data-bs-ride="true">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://sendpulse.com/blog/wp-content/uploads/2022/10/Certificados-para-cursos-en-linea_banner-1200x675.png" class="d-block w-100" alt="...">
             </div>
-          </div>
+            <div class="carousel-item" *ngFor="let curs of cursos" >
+                <img src="{{curs.certificadoUrlCurso}} " class="d-block w-100" alt="...">
+                <div *ngIf="autentication.estaLogueado">
+                    <button 
+                        (click)="onOpenModal('edit', curs)"
+                        type="button" class="btn btn-primary" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#editCursoModal"
+                        data-original-title="edit">
+                            <i class="fa fa-pencil"></i>
+                    </button>
+                    <button 
+                        (click)="onOpenModal('delete', curs)"
+                        type="button" 
+                        class="btn btn-danger" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#deleteCursoModal"
+                        data-original-title="delete"> 
+                            <i class="fas fa-times"></i>
+                    </button>                  
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-</div>
-    
+    </div>
 </section>
-
-
-
 <!-- add modal -->
 <div class="modal fade" 
         id="addCursoModal" 
@@ -61,7 +52,6 @@
         role="dialog" 
         aria-labelledby="addCursoModalLabel" 
         aria-hidden="true">
-
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -80,7 +70,6 @@
                             required
                     />
                 </div>
-                
                 <div class="modal-footer">
                     <button 
                     type="button" 
@@ -101,14 +90,13 @@
     </div>
 </div>
 </div>
-    <!-- edit modal -->
+<!-- edit modal -->
 <div class="modal fade" 
     id="editCursoModal" 
     tabindex="-1"  
     role="dialog" 
     aria-labelledby="editCursoModalLabel" 
     aria-hidden="true">
-
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -126,8 +114,7 @@
                             class="form-control" 
                             id="certificadoUrlCurso" 
                             aria-describedby="emailHelp"
-                            placeholder=" " 
-                                
+                            placeholder=" "   
                         />
                     </div>
                     <input 
@@ -137,7 +124,6 @@
                         id="idCurso"
                         class="form-control"
                         placeholder=" " />
-
                     <div class="modal-footer">
                         <button 
                             type="button" 
@@ -160,13 +146,13 @@
 </div>
 <!-- delete modal -->
 <div
-        class="modal fade" 
-        id="deleteCursoModal" 
-        tabindex="-1"  
-        role="dialog" 
-        aria-labelledby="deleteCursoModalLabel" 
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    class="modal fade" 
+    id="deleteCursoModal" 
+    tabindex="-1"  
+    role="dialog" 
+    aria-labelledby="deleteCursoModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteCursoModalLabel"> Eliminar curso </h5>
@@ -189,13 +175,10 @@
                             class="btn btn-danger" 
                             type="button" > 
                                 Eliminar
-                            
                         </button>
-                    
                     </div>
                 </div>
             </div>
-
-        </div>
+    </div>
 </div>
 

@@ -8,10 +8,7 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent {
-
- 
   constructor(public autentication:AutenticacionService ){
-
   }
 
   ngOnInit(){
@@ -20,32 +17,24 @@ export class EncabezadoComponent {
       nav?.classList.toggle("abajo", window.scrollY>600)
     })
   }
-
+  // Fucniones para desplazarse a cada sección
   toacerde(){
     document.getElementById("acercade")?.scrollIntoView();
-
   }
   toexp(){
     document.getElementById("exp")?.scrollIntoView();
-
   }
   toskill(){
     document.getElementById("skill")?.scrollIntoView();
-
   }
   toedu(){
     document.getElementById("edu")?.scrollIntoView();
-
   }
   tocontact(){
     document.getElementById("contact")?.scrollIntoView();
-
   }
 
   toproyect(){
     document.getElementById("proyectos")?.scrollIntoView();
   }
- 
-
-
- }
+}

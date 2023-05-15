@@ -3,13 +3,10 @@
         <div class="container text-center">
         <h2 class=" fw-bold mt-5" style="font-size: 2.5rem; text-align: left;">
           Contacto
-
           <button *ngIf="autentication.estaLogueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addContModal">
             añadir Contacto
           </button>
         </h2>
-    
-        
         <p class="letra-estilo" >
           Conctáctame para trabajar juntos.
         </p>
@@ -42,7 +39,6 @@
                         data-bs-toggle="modal" 
                         data-bs-target="#deleteContModal"
                         data-original-title="delete"> 
-                    
                             <i class="fas fa-times"></i>
                     </button>                 
                   </div>
@@ -53,10 +49,7 @@
         </div>
         </div>
     </section>
-    
-
 </section>
-
 <!-- add modal -->
 <div class="modal fade" 
     id="addContModal" 
@@ -64,7 +57,6 @@
     role="dialog" 
     aria-labelledby="addContModalLabel" 
     aria-hidden="true">
-
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -93,7 +85,6 @@
                       placeholder="icono de Fontwezome. Ej: fa-brands fa-facebook" 
                       required>
                   </div>
-
                   <div class="form-group">
                       <label for="descripcionContacto"> pie de imagen </label>
                       <input type="text" 
@@ -104,7 +95,6 @@
                       placeholder="Contactame - sigueme " 
                       required>
                   </div>
-                  
                   <div class="modal-footer">
                       <button 
                       type="button" 
@@ -120,7 +110,6 @@
                               Guardar
                       </button>
                   </div>
-                  
               </form>
           </div>
       </div>
@@ -133,7 +122,6 @@ tabindex="-1"
 role="dialog" 
 aria-labelledby="editContModalLabel" 
 aria-hidden="true">
-
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -151,8 +139,7 @@ aria-hidden="true">
                         class="form-control" 
                         id="linkRedSocial" 
                         aria-describedby="emailHelp"
-                        placeholder="Link para redireccionar " 
-                            
+                        placeholder="Link para redireccionar"     
                     />
                 </div>
                 <input 
@@ -162,7 +149,6 @@ aria-hidden="true">
                     id="idContac"
                     class="form-control"
                     placeholder="" />
-                
                 <div class="form-group">
                     <label for="imagenUrlContacto"> Icono </label>
                     <input type="text" 
@@ -172,7 +158,6 @@ aria-hidden="true">
                     id="imagenUrlContacto" 
                     placeholder="icono de Fontwezome" >
                 </div>
-
                 <div class="form-group">
                     <label for="descripcionContacto"> pie de imagen </label>
                     <input type="text" 
@@ -183,7 +168,6 @@ aria-hidden="true">
                     placeholder="tipoCircleSkill" 
                     required>
                 </div>
-                
                 <div class="modal-footer">
                     <button 
                         type="button" 
@@ -192,7 +176,8 @@ aria-hidden="true">
                         data-bs-dismiss="modal">
                         Cerrar
                     </button>
-                    <button 
+                    <!--Botón para guardar los cambios del contacto -->
+                    <button
                         (click)="onUpdateContacto(editForm.value)"
                         data-bs-dismiss="modal"  
                         class="btn btn-primary"> 
@@ -211,9 +196,7 @@ id="deleteContModal"
 tabindex="-1"  
 role="dialog" 
 aria-labelledby="deleteContModalLabel" 
-aria-hidden="true">
-
->
+aria-hidden="true">>
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -221,25 +204,25 @@ aria-hidden="true">
         </div>
         <div class="modal-body">
             <p>
+                <!-- Mensaje de confirmación -->
                 ¿Estás seguro de que quieres eliminar el contacto?
             </p>
             <div class="modal-footer">
+                <!-- Botón para cerrar el modal -->
                 <button 
                         type="button" 
                         class="btn btn-secondary" 
                         data-bs-dismiss="modal">
                         Cerrar
                 </button>
-                <button 
+                <!-- Botón para eliminar el contacto -->
+                <button
                     (click)="onDeleteCont(deleteCont!.idContac)"
-                    
                     data-bs-dismiss="modal" 
                     class="btn btn-danger" 
                     type="button" > 
                         Eliminar
-                    
                 </button>
-            
             </div>
         </div>
     </div>

@@ -15,17 +15,14 @@ export class CursosComponent implements OnInit {
   public educacion:Educacion[]=[];
   public editEdu: Educacion | undefined;
   public deleteEdu:Educacion | undefined;
-
   cursosLista: any;
   constructor(private educationService:EducacionService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
-
     this.getEdu();
-    
     "use strict";
+     /*La siguiente parte de codigo se encarga de realizar el efecto de desvanecer cuando se scrolea*/
     let boxes = Array.from(document.querySelectorAll(".desvanecer"));
-    
     let scroller = () => {
       boxes.forEach(desvanecer => {
         if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
@@ -35,13 +32,12 @@ export class CursosComponent implements OnInit {
         }
       });
     };
-    
     window.addEventListener("load", scroller, false);
     window.addEventListener("scroll", scroller, false);
- 
   }
 
   public getEdu():void{
+    // Función para obtener los datos
     this.educationService.getEdu().subscribe({
       next:(Response: Educacion[]) =>{
         this.educacion=Response;
@@ -51,6 +47,7 @@ export class CursosComponent implements OnInit {
 
 
   public onOpenModal(mode:String, educacion?:Educacion):void{
+    // Función para abrir un modal específico según el modo y contacto proporcionados
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display='none';
@@ -64,40 +61,34 @@ export class CursosComponent implements OnInit {
       this.editEdu=educacion;
       button.setAttribute('data-target', '#editEstudioModal');
     }
-
     container?.appendChild(button);
     button.click();
   }
 
   public onAddEducacion(addForm : NgForm): void{
+    // Función para agregar 
     document.getElementById('add-edu-form')?.click();
     this.educationService.addEdu(addForm.value).subscribe({
       next: (response:Educacion) =>{
-        console.log(response);
         this.getEdu();
         addForm.reset();
       } 
     })
   }
-
-  
   public onUpdateEducacion(educacion : Educacion){
+     // Función para actualizar  
     this.editEdu=educacion;
     document.getElementById('add-edu-form')?.click();
     this.educationService.updateEdu(educacion).subscribe({
       next: (response:Educacion) =>{
-        console.log(response);
         this.getEdu();
-  
       } 
     })
   }
-
   public onDeleteEstudio(idEdu:number):void{
-
+     // Función para eliminar
     this.educationService.deleteEdu(idEdu).subscribe({
       next: (response:void) =>{
-        console.log(response);
         this.getEdu();
       } 
     })

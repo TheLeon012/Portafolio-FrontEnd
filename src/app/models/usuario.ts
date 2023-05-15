@@ -1,4 +1,5 @@
 export interface Usuario{
+/* Interfaz que representa un usuario*/
     id: number;
     nombre: string;
     apellido:string;

@@ -12,18 +12,13 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 export class BannerComponent implements OnInit{
 
   public usuario : Usuario | undefined;
-  public editUsuario : Usuario | undefined;
-
- 
-  constructor(private portafolioService : PortafolioService,  public autentication:AutenticacionService){
-
-  }
+  public editUsuario : Usuario | undefined; 
+  constructor(private portafolioService : PortafolioService,  public autentication:AutenticacionService){}
 
   ngOnInit(): void {
     this.getUser();
-    
+    /*La siguiente parte de codigo se encarga de realizar el efecto de desvanecer cuando se scrolea*/
     let boxes = Array.from(document.querySelectorAll(".desvanecer"));
-    
     let scroller = () => {
       boxes.forEach(desvanecer => {
         if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
@@ -33,22 +28,22 @@ export class BannerComponent implements OnInit{
         }
       });
     };
-    
     window.addEventListener("load", scroller, false);
     window.addEventListener("scroll", scroller, false);
   }
 
   public getUser():void{
+    // Obtiene el usuario utilizando el servicio portafolioService
+    // y suscribe una función de devolución de llamada para manejar la respuesta exitosa.
     this.portafolioService.getUser().subscribe({
       next: (response: Usuario) =>{
+        // Asigna la respuesta recibida a la variable usuario de la instancia actual.
         this.usuario=response;
- 
-
       } 
     })
   }
-
   public onOpenModal(mode:String, user?:Usuario):void{
+    // Obtiene el elemento contenedor principal mediante su id.
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display='none';
@@ -60,22 +55,21 @@ export class BannerComponent implements OnInit{
       this.editUsuario=user;
       button.setAttribute('data-target', '#editUserModal');
     }
-
     container?.appendChild(button);
     button.click();
   }
-
-  public onUpdateUser(user : Usuario){
-    this.editUsuario=user;
+  public onUpdateUser(user: Usuario) {
+    // Asigna el usuario recibido al atributo editUsuario de la instancia actual.
+    this.editUsuario = user;
+    // Obtiene el formulario de agregar usuario y simula un clic en él.
     document.getElementById('add-user-form')?.click();
+    // Llama al método updateUsuario(user) del servicio portafolioService
+    // y suscribe una función de devolución de llamada para manejar la respuesta exitosa.
     this.portafolioService.updateUsuario(user).subscribe({
-      next: (response:Usuario) =>{
-        console.log(response);
+      next: (response: Usuario) => {
+        // Actualiza los datos de usuario llamando al método getUser().
         this.getUser();
-  
       } 
-      
-    })
+    });
   }
-   
 }

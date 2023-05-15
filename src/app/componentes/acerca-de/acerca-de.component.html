@@ -5,6 +5,7 @@
             <div class="col-xl-8  col-sm-6 mt-2">
                 <h2 class="acercademi fw-bold mt-5">
                 Acerca de mi  
+                <!-- Botón de edición -->
                     <button *ngIf="autentication.estaLogueado" 
                         (click)="onUpdateAcercade"
                         type="button" class="btn btn-primary botonEditor" 
@@ -21,8 +22,7 @@
             
         </div>
     </div>
-    
-    <!-- edit modal -->
+    <!-- Modal de edición -->
     <div class="modal fade" 
         id="editAcercadeModal" 
         tabindex="-1"  
@@ -37,6 +37,7 @@
                 </div>
                 <div class="modal-body">
                     <form #editForm="ngForm">
+                         <!-- Formulario de edición -->
                         <div class="form-group">
                             <div class="mb-3">
                                 <label for="descripcion">Descripcion</label>
@@ -50,7 +51,6 @@
                                 class="form-control" ></textarea>
                               </div>
                         </div>
-                        
                         <!-- estos input mantienen los use para no modificar las demas variables -->
                         <input 
                             type="hidden" 

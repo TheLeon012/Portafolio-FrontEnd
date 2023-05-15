@@ -25,8 +25,8 @@ export class ContactoComponent implements OnInit {
 
     this.getCont();
     "use strict";
+    /*La siguiente parte de codigo se encarga de realizar el efecto de desvanecer cuando se scrolea*/
     let boxes = Array.from(document.querySelectorAll(".desvanecer"));
-    
     let scroller = () => {
       boxes.forEach(desvanecer => {
         if (desvanecer.getBoundingClientRect().top < window.innerHeight) {
@@ -36,21 +36,21 @@ export class ContactoComponent implements OnInit {
         }
       });
     };
-    
     window.addEventListener("load", scroller, false);
-    window.addEventListener("scroll", scroller, false);
-
-     
+    window.addEventListener("scroll", scroller, false); 
   }
 
   public getCont():void{
+    // Función para obtener los contactos
     this.contactoService.getCont().subscribe({
       next:(Response: Contacto[]) =>{
+         // Asignar la respuesta al arreglo de contactos
         this.contacto=Response;
       } 
     })
   }
   public onOpenModal(mode:String, contacto?:Contacto):void{
+    // Función para abrir un modal específico según el modo y contacto proporcionados
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display='none';
@@ -70,10 +70,10 @@ export class ContactoComponent implements OnInit {
   }
 
   public onAddCont(addForm : NgForm): void{
+    // Función para agregar un nuevo contacto
     document.getElementById('add-con-form')?.click();
     this.contactoService.addCont(addForm.value).subscribe({
       next: (response:Contacto) =>{
-        console.log(response);
         this.getCont();
         addForm.reset();
       } 
@@ -81,25 +81,22 @@ export class ContactoComponent implements OnInit {
   }
 
   public onUpdateContacto(con : Contacto){
+     // Función para actualizar
     this.editCont=con;
     document.getElementById('add-con-form')?.click();
     this.contactoService.updateCont(con).subscribe({
       next: (response:Contacto) =>{
-        console.log(response);
         this.getCont();
-  
       },
       error:(error:HttpErrorResponse)=>{
         alert(error.message);
- 
       }
     })
   }
   public onDeleteCont(idCont : number):void{
-
+ // Función para eliminar
     this.contactoService.deleteCont(idCont).subscribe({
       next: (response:void) =>{
-        console.log(response);
         this.getCont();
       } 
     })

@@ -1,7 +1,6 @@
  <section  class="bannerFoto"
  [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95), rgba(0,0,0,0.01)), 
         url(' + usuario?.fotoBanner +  ')'">
-    
         <div class="formulario">
         <h2 class="fw-bold text-center text-white">Bienvenido</h2>
         <div>
@@ -14,7 +13,6 @@
                     <div *ngIf="Email?.errors && Email?.touched">
                         <p *ngIf="Email?.hasError('required')" class="text-danger">El email es requerido</p>
                         <p *ngIf="Email?.hasError('email')" class="text-danger">El formato del email debe ser valido</p>
-
                     </div>
                 </div>
                 <div class="mb-4 text-white" >

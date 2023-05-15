@@ -19,23 +19,19 @@ export class EstudiosComponent {
   constructor(private cursosService:CursosService, public autentication:AutenticacionService){}
 
   ngOnInit(): void{
-
     this.getCurso();
-    
- 
-
   }
 
   public getCurso():void{
+        // Función para obtener los datos
     this.cursosService.getCurso().subscribe({
       next:(Response: Cursos[]) =>{
         this.cursos=Response;
       } 
     })
   }
-
-
   public onOpenModal(mode:String, cursos?:Cursos):void{
+    // Función para abrir un modal específico según el modo y contacto proporcionados
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display='none';
@@ -55,10 +51,10 @@ export class EstudiosComponent {
   }
 
   public onAddCurso(addForm : NgForm): void{
+     // Función para agregar 
     document.getElementById('add-cursos-form')?.click();
     this.cursosService.addCurso(addForm.value).subscribe({
       next: (response:Cursos) =>{
-        console.log(response);
         this.getCurso();
         addForm.reset();
         window.location.reload();
@@ -70,11 +66,11 @@ export class EstudiosComponent {
 
   
   public onUpdateCurso(cursos : Cursos){
+    // Función para actualizar  
     this.editCurso=cursos;
     document.getElementById('add-cursos-form')?.click();
     this.cursosService.updateCurso(cursos).subscribe({
       next: (response:Cursos) =>{
-        console.log(response);
         this.getCurso();
         window.location.reload();
         this.autentication.estaLogueado = true;
@@ -82,12 +78,10 @@ export class EstudiosComponent {
       } 
     })
   }
-
   public onDeleteCurso(idCurso:number):void{
-
+// Función para eliminar
     this.cursosService.deleteCurso(idCurso).subscribe({
       next: (response:void) =>{
-        console.log(response);
         this.getCurso();
         window.location.reload();
         this.autentication.estaLogueado = true;

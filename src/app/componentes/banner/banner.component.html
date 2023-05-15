@@ -2,15 +2,12 @@
 <div class="bannerFoto"  
         [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95), rgba(0,0,0,0.01)), 
         url('  + usuario?.fotoBanner +  ')'"> 
-  
     <div style="position:relative; top:150px">
     <div class="container desvanecer">
       <div class="row" >
-
         <div class="col-xl-4 col-md col-sm-9 ">
           <img src="{{usuario?.fotoPerfil}}" alt="Foto Perfil" class="imgCircularGrande">
         </div>
-        
         <div class="col-xl-8 col-md col-sm-12 margenDescripcion"> 
           <h4 class="text-center text-white intro">
             Bienvenido!  
@@ -22,6 +19,7 @@
              {{usuario?.titulo}}
           </h3>
           <div *ngIf="autentication.estaLogueado" class="botonEditor">
+             <!-- Muestra un botón de edición si el usuario está autenticado -->
             <button 
                 (click)="onOpenModal('edit', usuario)"
                 type="button" class="btn btn-primary" 
@@ -36,17 +34,13 @@
     </div>
   </div>
 </div>
-
-
-  <!-- edit modal -->
-  
+      <!-- Modal para editar usuarios -->
 <div class="modal fade" 
   id="editUserModal" 
   tabindex="-1"  
   role="dialog" 
   aria-labelledby="editUserModalLabel" 
   aria-hidden="true">
-
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -67,6 +61,7 @@
                           placeholder="" 
                       />
                   </div>
+ <!-- Campo oculto para el id del usuario -->
                   <input 
                       type="hidden" 
                       ngModel= "{{editUsuario?.id}}" 
@@ -127,6 +122,7 @@
                           data-bs-dismiss="modal">
                           Cerrar
                       </button>
+                      <!-- Botón para guardar los cambios en el usuario -->
                       <button 
                           (click)="onUpdateUser(editForm.value)"
                           data-bs-dismiss="modal"  
@@ -139,4 +135,3 @@
       </div>
   </div>
 </div>
-

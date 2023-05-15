@@ -1,29 +1,18 @@
 .desvanecer {
-
     padding: 20px;
- 
     opacity: 0; /* oculta el contenido */
     transform: translateY(50px); /* desplaza hacia abajo */
     transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
-    scroll-snap-align: start; /* nueva propiedad */
-  }
-  
+    scroll-snap-align: start; /* nueva propiedad */ }
 .desvanecer.inView {
     opacity: 1; /* muestra el contenido */
-    transform: translateY(0); /* elimina el desplazamiento */
-}
-
-  
+    transform: translateY(0); /* elimina el desplazamiento */}
 .botonEditor{
-    
 	position: absolute;
     right: 0;
-	top: 0;
-}
-
+	top: 0;}
 @media only screen and (max-width: 413px){
-    div.bannerFoto{
-         
+    div.bannerFoto{ 
         width: 100%;
         height: 170vh;
         top: 0;
@@ -37,13 +26,9 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         -webkit-background-size: cover;
-        -msm-background-size: cover;
-    }
-
-}
+        -msm-background-size: cover;}}
 @media only screen and (min-width:400px) and (max-width:575px){
-    div.bannerFoto{
-       
+    div.bannerFoto{ 
         width: 100%;
         height: 200vh;
         top: 0;
@@ -57,13 +42,9 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         -webkit-background-size: cover;
-        -msm-background-size: cover;
-    }
-}
-
+        -msm-background-size: cover;}}
 @media only screen and (min-width:576px) and (max-width:683px){
     div.bannerFoto{
-       
         width: 100%;
         height: 200vh;
         top: 0;
@@ -77,12 +58,9 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         -webkit-background-size: cover;
-        -msm-background-size: cover;
-    }
-}
+        -msm-background-size: cover;}}
 @media only screen and (min-width: 684px) and (max-width: 958px){
     div.bannerFoto{
-       
         width: 100%;
         height: 120vh;
         top: 0;
@@ -96,13 +74,9 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         -webkit-background-size: cover;
-        -msm-background-size: cover;
-    }
-}
-
+        -msm-background-size: cover;}}
 @media only screen and (min-width: 959px) {
     div.bannerFoto{
-        
         width: 100%;
         height: 120vh;
         top: 0;
@@ -116,10 +90,7 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         -webkit-background-size: cover;
-        -msm-background-size: cover;
-    }
-}
-
+        -msm-background-size: cover;}}
 @media only screen and (max-width: 413px){
     .imgCircularGrande{
         text-align: center;
@@ -131,9 +102,7 @@
         border-radius: 50%;
         width: 250px;
         height: 250px;
-        overflow: hidden;
-    }
-}
+        overflow: hidden;}}
 @media only screen and (min-width:400px) and (max-width:575px){
     .imgCircularGrande{
         text-align: center;
@@ -144,9 +113,7 @@
         border-radius: 50%;
         width: 250px;
         height: 250px;
-        overflow: hidden;
-    }
-}
+        overflow: hidden;}}
 @media only screen and (min-width:576px) and (max-width:683px){
     .imgCircularGrande{
         text-align: center;
@@ -157,9 +124,7 @@
         border-radius: 50%;
         width: 250px;
         height: 250px;
-        overflow: hidden;
-    }
-}
+        overflow: hidden;}}
 @media only screen and (min-width: 684px) and (max-width: 958px){
     .imgCircularGrande{
         text-align: center;
@@ -170,30 +135,22 @@
         border-radius: 50%;
         width: 250px;
         height: 250px;
-        overflow: hidden;
-    }
-}
+        overflow: hidden;}}
 @media only screen and (min-width: 959px) {
     .imgCircularGrande{
         text-align: center;
         position: relative;
         left: 50%;
         right: 60%;
-         
         border-radius: 50%;
         width: 250px;
         height: 250px;
-        overflow: hidden;
-    }
+        overflow: hidden;}
     .margenDescripcion{ 
         position: relative;
-        top: 50px;
-    }
-}
-
+        top: 50px;}}
 .imgCircular{
     border-radius: 50%;
     width: 171px;
     height: 171px;
-    overflow: hidden;
-}
+    overflow: hidden;}

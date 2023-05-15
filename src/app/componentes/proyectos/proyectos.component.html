@@ -11,7 +11,7 @@
     </section>
     <section class="sectionproyect">
         <div class="row"> 
-            <div *ngFor="let proyec of proy" class="example-2 card col-2">
+            <div *ngFor="let proyec of proy" class="example-2 card col-2 ">
                 <div class="wrapper" style="background-image: url('{{proyec.imagenProy}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
                 <div class="header">
                     <div class="date" >
@@ -34,7 +34,6 @@
                         data-original-title="edit">
                             <i class="fa fa-pencil"></i>
                     </button>
-        
                     <button 
                         (click)="onOpenModal('delete', proyec)"
                         type="button" 
@@ -42,18 +41,14 @@
                         data-bs-toggle="modal" 
                         data-bs-target="#deleteProyModal"
                         data-original-title="delete"> 
-                    
                             <i class="fas fa-times"></i>
                     </button>                 
                 </div>
                 </div>
             </div> 
         </div>
-       
     </section>
 </section>
-
-
   <!-- add modal -->
 <div class="modal fade" 
   id="addProyModal" 
@@ -61,7 +56,6 @@
   role="dialog" 
   aria-labelledby="addProyModalLabel" 
   aria-hidden="true">
-
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -80,7 +74,6 @@
                       placeholder="Proyecto" 
                       required>
                   </div>
-
                   <div class="form-group">
                       <label for="descripcionProy"> Descripcion </label>
                       <input type="text" 
@@ -91,8 +84,6 @@
                       placeholder="Descripcion" 
                       required>
                   </div>
-                  
-
                   <div class="form-group">
                     <label for="imagenProy"> imagen url </label>
                     <input type="text" 
@@ -123,7 +114,6 @@
                     placeholder="url del proyecto" 
                     required>
                 </div>
-                  
                   <div class="modal-footer">
                       <button 
                       type="button" 
@@ -138,7 +128,6 @@
                               Guardar
                       </button>
                   </div>
-                  
               </form>
           </div>
       </div>
@@ -151,7 +140,6 @@
     role="dialog" 
     aria-labelledby="editProyModalLabel" 
     aria-hidden="true">
-
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -169,8 +157,7 @@
                           class="form-control" 
                           id="tituloProy" 
                           aria-describedby="emailHelp"
-                          placeholder="" 
-                              
+                          placeholder=""
                       />
                   </div>
                   <input 
@@ -180,7 +167,6 @@
                       id="idProy"
                       class="form-control"
                       placeholder="" />
-                  
                   <div class="form-group">
                       <label for="descripcionProy"> Descripcion </label>
                       <input type="text" 
@@ -190,7 +176,6 @@
                       id="descripcionProy" 
                       placeholder="Descripcion del proyecto" >
                   </div>
-
                   <div class="form-group">
                     <label for="imagenProy"> Imagen Url </label>
                     <input type="text" 
@@ -200,7 +185,6 @@
                     id="imagenProy" 
                     placeholder="Imagen Url del proyecto" >
                 </div>
-
                   <div class="form-group">
                     <label for="fechaProy"> Fecha del proyecto </label>
                     <input type="text" 
@@ -221,7 +205,6 @@
                     placeholder="Fecha de finalizacion" 
                      >
                 </div>
-                  
                   <div class="modal-footer">
                       <button 
                           type="button" 
@@ -268,7 +251,6 @@
                 </button>
                 <button 
                     (click)="onDeleteProy(deleteProyecto!.idProy)"
-                    
                     data-bs-dismiss="modal" 
                     class="btn btn-danger" 
                     type="button" > 
@@ -277,8 +259,5 @@
             </div>
         </div>
     </div>
-
 </div>
 </div>
-
-

@@ -1,16 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-  
 .desvanecer {
-
     padding: 20px;
     scroll-margin: 200px ; /* establece el margen */
     opacity: 1; /* oculta el contenido */
     transform: translateY(400px); /* desplaza hacia abajo */
     transition: opacity 1s ease, transform 1s ease; /* agrega una transición */
     scroll-snap-align: start; /* nueva propiedad */
-     
   }
-  
  .desvanecer.inView {
 	padding-top: 6%;
     opacity: 1; /* muestra el contenido */
@@ -18,7 +14,6 @@
  }
  
 .botonEditor{
-	
 	position: absolute;
     right: 0;
 	top: 0;
@@ -32,13 +27,12 @@ a {
 	 font-weight: 300;
 }
  
- .card {
+.card {
 	 float: left;
 	 margin: auto;
 	 padding: 2.2%;
 	 width: 30%;
 	 --bs-card-border-width: none;
- 
 }
  .card .menu-content {
 	 margin: 0;
@@ -170,7 +164,22 @@ a {
 
 .sectionproyect{
 	width: 90%;
-	
 	margin: auto 
 }
+@media (max-width: 482px) {
+	/* Estilos que se aplicarán cuando la resolución horizontal sea menor a 482px */
+	/* Aquí puedes escribir las reglas CSS que deseas aplicar */
+	/* por ejemplo, cambiar el color de fondo */
+	.sectionproyect{
+		width: 90%;
+	}
+	.card {
+		float: left;
+		margin: auto;
+		padding: 2.2%;
+		width: 60%;
+		--bs-card-border-width: none;
+   }
+
+  }
  
